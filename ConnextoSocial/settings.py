@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ConnextoSocial.accounts.apps.AccountsConfig' ,
+    'ConnextoSocial.carphotos.apps.CarphotosConfig' ,
+    'ConnextoSocial.common.apps.CommonConfig' ,
+    'ConnextoSocial.cars.apps.CarsConfig'
 ]
 
 MIDDLEWARE = [
