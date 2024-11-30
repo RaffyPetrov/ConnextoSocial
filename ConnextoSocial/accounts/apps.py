@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CarphotosConfig(AppConfig):
+class AccountsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'carphotos'
+    name = 'ConnextoSocial.accounts'
