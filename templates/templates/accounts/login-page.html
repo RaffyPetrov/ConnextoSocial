@@ -1,0 +1,36 @@
+{% extends 'templates/common/base.html' %}
+{% load placeholder_filter %}
+
+{% block content %}
+    <!-- Start Login Section -->
+    <div class="login-register-div">
+        <div class="login-register-box">
+            <h1>ConnextoSocial</h1>
+
+            <!-- Start Login Form -->
+            <form method="post">
+                {% csrf_token %}
+                
+                <!-- Display form errors -->
+                {{ form.errors }}
+                
+                <!-- Username (Email) input with placeholder -->
+                {{ form.username|placeholder:"Email" }}
+                
+                <!-- Password input with placeholder -->
+                {{ form.password|placeholder:"Password" }}
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">Log in</button> <!-- Added class -->
+            </form>
+            <!-- End Login Form -->
+
+        </div>
+        
+        <div class="second-option">
+            <!-- Link to Register Page -->
+            <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+        </div>
+    </div>
+    <!-- End Login Section -->
+{% endblock %}

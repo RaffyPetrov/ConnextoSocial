@@ -1,0 +1,24 @@
+{% extends 'templates/common/base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Start Delete Profile Section -->
+    <div class="delete-profile">
+        <h1>Are you sure you want to delete your profile?</h1>
+        
+        <div class="sure-buttons">
+            <!-- Yes (Delete Profile) Button -->
+            <form method="post" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="confirm-btn">Yes</button>
+            </form>
+            
+            <!-- Go Back Button -->
+            <a href="javascript:history.back()" class="edit-btn">Go Back</a>
+        </div>
+        
+        <!-- Optional Themed Image -->
+        <img src="{% static 'images/are-you-sure-icon.png' %}" alt="Are you sure car icon" class="confirmation-image">
+    </div>
+    <!-- End Delete Profile Section -->
+{% endblock %}

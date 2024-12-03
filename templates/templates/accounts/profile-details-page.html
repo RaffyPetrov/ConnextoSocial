@@ -1,0 +1,108 @@
+{% extends 'templates/common/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="profile">
+        <!-- Start Profile Personal Data Section -->
+        <div class="profile-data">
+            <div class="profile_img">
+                <div class="image">
+                    <!-- Profile Image -->
+                    {% if object.profile.profile_picture %}
+                        <img src="{{ object.profile.profile_picture }}" alt="Profile Picture" />
+                    {% else %}
+                        <img src="{% static 'images/person.png' %}" alt="Default Profile Picture" />
+                    {% endif %}
+                </div>
+            </div>
+            <div class="personal">
+                <div class="edit">
+                    <!-- User's Full Name -->
+                    <p>{{ object.profile.get_full_name }}</p>
+
+                    <!-- If the viewer is the owner of the profile -->
+                    {% if request.user.pk == object.pk %}
+                        <a href="{% url 'profile-edit' request.user.pk %}">
+                            <img 
+                                class="edit-img" 
+                                src="{% static 'images/edit-icon.png' %}" 
+                                alt="Edit Profile" 
+                            />
+                        </a>
+                        <a href="{% url 'profile-delete' request.user.pk %}">
+                            <img 
+                                class="bin-img" 
+                                src="{% static 'images/icon-remove.png' %}" 
+                                alt="Delete Profile" 
+                            />
+                        </a>
+                    {% endif %}
+                </div>
+
+                <div class="data">
+                    <!-- Total Number of Cars -->
+                    <span>{{ total_cars_count }}</span>
+                    <p>cars</p>
+
+                    <!-- Total Number of Posts -->
+                    <span>{{ total_posts_count }}</span>
+                    <p>posts</p>
+
+                    <!-- Total Number of Likes -->
+                    <span>{{ total_likes_count }}</span>
+                    <p>likes</p>
+                </div>
+
+                <!-- User's Full Name -->
+                <h3 class="names">{{ object.profile.get_full_name }}</h3>
+
+                <!-- User's Email -->
+                <p class="email">{{ object.email }}</p>
+            </div>
+        </div>
+        <!-- End Profile Personal Data Section -->
+
+        <!-- Start Cars Section -->
+        <div class="cars">
+            <h2>Your Cars</h2>
+            <div class="statuses">
+                {% for car in object.car_set.all %}
+                    <a href="{% url 'car-details' car.slug %}">
+                        <div class="car-info">
+                            <div class="status">
+                                <div class="image">
+                                    <!-- Car Image -->
+                                    <img src="{{ car.image.url }}" alt="{{ car.name }}" />
+                                </div>
+                            </div>
+                            <!-- Car Name -->
+                            <p>{{ car.name }}</p>
+                        </div>
+                    </a>
+                {% empty %}
+                    <p>You haven't added any cars yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- End Cars Section -->
+
+        <!-- Start Posts Section -->
+        <div class="posts">
+            <h2>Your Latest Posts</h2>
+            <div class="post-photos">
+                {% for post in object.post_set.all %}
+                    <a href="{% url 'post-details' post.pk %}">
+                        <img src="{{ post.image.url }}" alt="Post Image" />
+                    </a>
+                {% empty %}
+                    <img 
+                        class="no-posts" 
+                        src="{% static 'images/no-posts-icon.png' %}" 
+                        alt="No Posts Available" 
+                    />
+                {% endfor %}
+            </div>
+        </div>
+        <!-- End Posts Section -->
+    </div>
+{% endblock %}
