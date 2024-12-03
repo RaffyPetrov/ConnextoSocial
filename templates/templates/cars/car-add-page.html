@@ -1,0 +1,21 @@
+{% extends 'templates/common/base.html' %}
+
+{% block content %}
+	
+
+    <!-- Start Add Car Section-->
+    <div class="edit-delete edit-photo">
+        <h2>Add Car</h2>
+
+        <!-- Start Add Car Form -->
+        <form action="{% url 'add-car' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="add-btn" type="submit">Add Car</button>
+        </form>
+        <!-- End Add Car Form -->
+
+    </div>
+    <!-- End Add Car Section -->
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'templates/common/base.html' %}
+
+{% block content %}
+
+    <!-- Start Edit car Section -->
+    <div class="edit-delete edit-photo">
+        <h2>Edit car</h2>
+        <!-- Start Edit car From -->
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <!-- Edit car Button -->
+            <button class="edit-btn" type="submit">Edit</button>
+        </form>
+        <!-- End Edit car Form -->
+
+    </div>
+    <!-- End Edit car Section -->
+
+{% endblock %}

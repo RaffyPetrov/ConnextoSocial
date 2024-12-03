@@ -1,0 +1,53 @@
+{% extends 'templates/common/base.html' %}
+{% load static %}
+
+{% block content %}
+
+	<div class="car-profile">
+		<!-- Start Car Personal Data Section -->
+		<div class="profile">
+			<div class="profile-data">
+				<div class="profile_img">
+					<div class="image">
+						<!-- Car Image -->
+						<img src="{{ car.image_url }}" alt="Car Image">
+					</div>
+				</div>
+				<div class="personal">
+					<div class="edit">
+						<!-- Car Name -->
+						<p>{{ car.name }}</p>
+						<!-- Car Edit Button -->
+						{% if request.user == car.user %}
+							<a href="{% url 'edit-car' car.id %}">
+								<img class="edit-img" src="{% static 'images/edit-icon.png' %}" alt="edit button">
+							</a>
+							<!-- Car Delete Button -->
+							<a href="{% url 'delete-car' car.id %}">
+								<img class="bin-img" src="{% static 'images/icon-remove.png' %}" alt="bin button">
+							</a>
+						{% endif %}
+					</div>
+					<div class="data">
+						<!-- Car Total Photos -->
+						<span>{{ all_photos.count }}</span>
+						<p>photos</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Car Personal Data Section -->
+
+		<!-- Start Car Photos Section -->
+		<div class="car-posts">
+			{% for photo in all_photos %}
+				{% include 'templates/common/car-posts.html' %}
+			{% empty %}
+				<img class="no-posts" src="{% static 'images/no-posts-icon.png' %}" alt="no posts image">
+			{% endfor %}
+		</div>
+		<!-- End Car Photos Section -->
+
+	</div>
+
+{% endblock %}
