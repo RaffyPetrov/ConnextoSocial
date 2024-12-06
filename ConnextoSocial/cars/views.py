@@ -10,7 +10,7 @@ from ConnextoSocial.cars.models import Cars
 class CarAddPage(LoginRequiredMixin, CreateView):
     model = Cars
     form_class = CarAddForm
-    template_name = 'templates/cars/car-add-page.html'
+    template_name = 'templates/photos/car-photo-add-page.html'
 
     def form_valid(self, form):
         car = form.save(commit=False)
@@ -18,12 +18,8 @@ class CarAddPage(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy(
-            'profile-details',
-            kwargs={
-                'pk': self.request.user.pk,
-            }
-        )
+            # Redirect to the CarPhotoAddPage after the form is successfully submitted
+            return reverse_lazy('photo-add')  # Use 'photo-add' which corresponds to the URL pattern for CarPhotoAddPage
 
 
 class CarEditPage(LoginRequiredMixin, UserPassesTestMixin, UpdateView):

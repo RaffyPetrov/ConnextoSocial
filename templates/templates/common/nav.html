@@ -31,23 +31,18 @@
                                 <i>Profile</i>
                             </a>
                         </li>
-                        <form method="post" action="{% url 'logout' %}">
-                            {% csrf_token %}
-                            <button class="logout-button" type="submit"><i>Logout</i></button>
-                        </form>
+                        <li class="nav-item"> <!-- Logout Button -->
+                            <form method="post" action="{% url 'logout' %}">
+                                {% csrf_token %}
+                                <button class="add-btn logout-button" type="submit"><i>Logout</i></button>
+                            </form>
+                        </li>
                     {% endif %}
-                    
-                    <!-- Link to Add Car Page -->
-                    <li class="nav-item">
-                        <a href="{% url 'add-car' %}">
-                            <i>Add Car</i>
-                        </a>
-                    </li>
-
+				
                     <!-- Link to Add Photo Page -->
                     <li class="nav-item">
                         <a href="{% url 'photo-add' %}">
-                            <i>Add Photo</i>
+                            <i>Create</i>
                         </a>
                     </li>
                 </ul>

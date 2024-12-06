@@ -1,16 +1,28 @@
 {% extends 'templates/common/base.html' %}
 
 {% block content %}
-    <!-- Start Add Photo Section -->
-    <div class="edit-delete edit-photo">
-        <h2>Add photo</h2>
-        <!-- Start Add Photo Form -->
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form }}
-            <!-- Add Photo Button -->
-            <button class="add-btn" type="submit">Add Photo</button>
-        </form>
-        <!-- End Add Photo Form -->
-    </div>
+	<!-- Start Add Car and Photo Section -->
+	<div class="edit-delete edit-photo">
+		<h2>Create Car</h2>
+
+		<!-- Start Add Car Form -->
+        <form action="{% url 'add-car' %}" method="post">
+			{% csrf_token %}
+			{{ car_form.as_p }}
+			<button class="add-btn" type="submit">Add Car</button>
+		</form>
+		<!-- End Add Car Form -->
+
+		<hr>
+
+		<!-- Start Add Photo Form -->
+		<h3>Upload Car Photo</h3>
+		<form id="photo-form" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button class="add-btn" type="submit">Upload Photo</button>
+		</form>
+		<!-- End Add Photo Form -->
+	</div>
+	<!-- End Add Car and Photo Section -->
 {% endblock %}

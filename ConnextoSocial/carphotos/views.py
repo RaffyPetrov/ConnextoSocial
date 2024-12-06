@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DetailView
+from ConnextoSocial.cars.forms import CarAddForm
 from ConnextoSocial.common.forms import CommentForm
 from ConnextoSocial.carphotos.forms import CarPhotoAddForm, CarPhotoEditForm
 from ConnextoSocial.carphotos.models import CarPhoto
@@ -14,9 +15,31 @@ class CarPhotoAddPage(LoginRequiredMixin, CreateView):
     form_class = CarPhotoAddForm
     success_url = reverse_lazy('home page')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Include the car form in the context
+        if 'car_form' not in context:
+            context['car_form'] = CarAddForm()
+        return context
+
     def form_valid(self, form):
-        photo = form.save(commit=False)
-        photo.user = self.request.user
+        # Save the car form if provided
+        car_form = CarAddForm(self.request.POST or None)
+        car_instance = None
+        if car_form.is_valid():
+            car_instance = car_form.save(commit=False)
+            car_instance.user = self.request.user
+            car_instance.save()
+
+        # Save the photo and associate it with the car(s)
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+
+        # If a car was created, add it to tagged_cars
+        if car_instance:
+            self.object.tagged_cars.add(car_instance)
+
+        self.object.save()
 
         return super().form_valid(form)
 

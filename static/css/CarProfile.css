@@ -1,3 +1,16 @@
+/* Set default color to black and add hover effect with smaller font size */
+.interactive {
+    color: #000000; /* Default color (black) */
+    font-size: 12px; /* Smaller font size */
+    transition: color 0.3s ease; /* Smooth transition effect */
+}
+
+.interactive:hover {
+    color: #ff6600; /* Darker orange color on hover */
+}
+
+
+
 /* Car Profile */
 .car-profile {
     width: 50%;
@@ -30,7 +43,7 @@
     display: block; /* Ensure the cards are block elements */
     border: 1px solid rgba(7, 7, 7, 0.24);
     border-radius: 10px; /* Optional: rounded corners for a smoother look */
-    background: #1f1f1f;
+    background: #000;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -67,7 +80,7 @@
 
 .car-posts h3 {
     font-size: 18px;
-    color: #333;
+    color: #fff;
     font-weight: 500;
     line-height: 1.4em;
     margin-top: 10px;

@@ -270,20 +270,25 @@ body {
     margin-right: 10px;
 }
 
+/* Logout button (if you want specific tweaks) */
 .logout-button {
-    background-color: #333;
+    background-color: #f44336; /* Red background for logout */
     color: white;
+    font-weight: bold;
+    font-size: 14px;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+    height: 40px;
     cursor: pointer;
-    text-align: left;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Button hover effect */
 .logout-button:hover {
-    background-color: #ff6a00;
+    background-color: #e53935; /* Slightly darker red */
     transform: translateY(-2px);
 }
 

@@ -32,14 +32,16 @@
 					<p>User not available</p>
 				{% endif %}
 				<!-- if user has first name and last name -->
-				{{ photo.user.profile.get_full_name }}
+				<span class="interactive">{{ photo.user.profile.get_full_name }}</span>
 				<!-- else -->
 				<!-- user username -->
 
 				<br>
 				<!-- if the photo has location -->
 				{% if photo.location %}
-					<span>{{ photo.location }}</span>
+					<a href="https://www.google.com/maps?q={{ photo.location }}" class="interactive" target="_blank">
+						{{ photo.location }}
+					</a>
 				{% endif %}
 
 				{% if photo_page and request.user.pk == photo.user.pk %}
@@ -78,7 +80,8 @@
 					{% csrf_token %}
 					<button type="submit" class="heart-btn {% if photo.has_liked %}liked{% endif %}">
 						<span class="heart-icon">&hearts;</span>
-						<span class="like-text">{% if photo.has_liked %} {{ photo.like_set.count }} likes{% else %}Like{% endif %}</span>
+						<span class="like-text">{% if photo.has_liked %} {{ photo.like_set.count }} likes{% else %}
+							Like{% endif %}</span>
 					</button>
 				</form>
 
