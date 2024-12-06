@@ -29,9 +29,10 @@ class HomePageView(ListView):
     def get_queryset(self):
         queryset = super().get_queryset()  # ALl objects
         car_name = self.request.GET.get('car_name')
+
         if car_name:
             queryset = queryset.filter(  # Filter the objects
-                tagged_cars__name__icontains=car_name
+                tagged_cars__car_name__icontains=car_name
             )
         return queryset  # return the new queryset
 

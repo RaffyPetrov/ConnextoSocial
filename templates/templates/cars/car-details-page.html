@@ -19,11 +19,11 @@
 						<p>{{ car.name }}</p>
 						<!-- Car Edit Button -->
 						{% if request.user == car.user %}
-							<a href="{% url 'edit-car' car.id %}">
+							<a href="{% url 'edit-car' car.slug %}">
 								<img class="edit-img" src="{% static 'images/edit-icon.png' %}" alt="edit button">
 							</a>
 							<!-- Car Delete Button -->
-							<a href="{% url 'delete-car' car.id %}">
+							<a href="{% url 'delete-car' car.slug %}">
 								<img class="bin-img" src="{% static 'images/icon-remove.png' %}" alt="bin button">
 							</a>
 						{% endif %}

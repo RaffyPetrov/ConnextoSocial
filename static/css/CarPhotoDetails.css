@@ -1,0 +1,179 @@
+/* General Image Styling */
+.car-photo-details img,
+.imgBx img {
+    max-width: 100%; /* Ensure the image doesn't exceed container width */
+    max-height: 300px; /* Restrict image height */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Block-level element for centering */
+    margin: 20px auto; /* Center image with margin */
+    border-radius: 30%; /* Aesthetic rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    object-fit: cover; /* Ensure the image covers the container with cropping */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling on hover */
+}
+
+.car-photo-details img:hover,
+.imgBx img:hover {
+    transform: scale(1.05); /* Zoom effect for hover state */
+}
+
+/* Post Image Container */
+.imgBx {
+    position: relative;
+    overflow: revert; /* Prevent image overflow */
+    border-radius: 40%; /* Consistent rounded corners */
+    background-color: #000; /* Fallback background for transparency */
+    max-width: 100%; /* Responsive container width */
+    max-height: 300px; /* Restrict container height */
+}
+
+/* Profile Picture Styling */
+.profile_img img {
+    max-width: 150px; /* Restrict size for profile images */
+    max-height: 300px; /* Maintain size proportionality */
+    border-radius: 50%; /* Circular profile pictures */
+    object-fit: cover; /* Crop the image as necessary */
+    border: 2px solid #444; /* Add a subtle border */
+    transition: transform 0.3s ease;
+}
+
+.profile_img img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Add Comments Section */
+.addComments {
+    /*padding: 20px; !* Comfortable padding for the container *!*/
+    /*border-radius: 12px; !* Rounded corners *!*/
+    /*border: 1px solid #ddd; !* Subtle border *!*/
+    /*box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); !* Soft shadow for depth *!*/
+    /*background-color: #fff; !* White background for clean look *!*/
+    font-family: Arial, sans-serif;
+    margin-top: 25px; /* Space above comment section */
+    max-width: 550px; /* Slightly wider than previous */
+    margin-left: auto;
+    margin-right: auto; /* Center the comment section */
+}
+
+/* Title Styling */
+.addComments h2 {
+    font-size: 20px; /* Slightly larger title */
+    color: #333;
+    margin-bottom: 12px; /* Space below title */
+    font-weight: bold;
+}
+
+/* Form Styling */
+.addComments form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between fields */
+}
+
+/* Input Fields (Text and Input) */
+.addComments form input,
+.addComments form textarea {
+    width: 100%;
+    padding: 10px; /* Comfortable padding for better interaction */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #ddd;
+    background-color: #f9f9f9; /* Light background for inputs */
+    font-size: 14px; /* Slightly larger font for readability */
+    color: #333;
+    transition: all 0.3s ease;
+    text-transform: lowercase; /* Ensure input text is lowercase */
+}
+
+/* Focus State for Input Fields */
+.addComments form input:focus,
+.addComments form textarea:focus {
+    border-color: #ff7f00; /* Highlight with orange on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 127, 0, 0.5); /* Soft orange glow */
+}
+
+/* Textarea Custom Styling */
+.addComments form textarea {
+    height: 50px; /* Slightly higher textarea for better visibility */
+    resize: none; /* Allow resizing vertically */
+    font-family: Arial, sans-serif; /* Consistent font */
+    line-height: 1.4; /* Improve readability */
+    border: 1px solid #ffffff;
+    background-color: #fafafa; /* Light background color */
+}
+
+/* Submit Button Styling */
+.addComments form button {
+    background-color: #ff7f00; /* Orange background for the "Add Comment" button */
+    color: white; /* White text */
+    padding: 12px 25px; /* Comfortable padding */
+    border-radius: 8px; /* Rounded corners */
+    border: none;
+    font-size: 15px; /* Slightly larger font size for readability */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+/* Hover and Active State for Button */
+.addComments form button:hover {
+    background-color: #e76f00; /* Darker orange on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.addComments form button:active {
+    background-color: #c75e00; /* Even darker orange when clicked */
+    transform: translateY(0); /* Reset after click */
+}
+
+/* Disabled Button State */
+.addComments form button:disabled {
+    background-color: #ccc;
+    color: #777;
+    cursor: not-allowed;
+}
+
+/* Error Message Styling */
+.addComments p {
+    color: #d9534f;
+    font-size: 13px; /* Smaller error text */
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Responsive Layout for Mobile Devices */
+@media (max-width: 768px) {
+    .car-photo-details img,
+    .imgBx img {
+        max-height: 200px; /* Adjust image size for smaller screens */
+    }
+
+    .comments .userDetails {
+        font-size: 14px; /* Smaller font size for user details */
+    }
+
+    .add-comment-details .addComments input,
+    .add-comment-details .addComments button {
+        font-size: 13px; /* Adjust font size for smaller screens */
+    }
+
+    .addComments {
+        padding: 15px; /* Reduced padding on mobile */
+        max-width: 400px; /* Smaller width for mobile devices */
+    }
+
+    .addComments h2 {
+        font-size: 16px; /* Smaller title */
+    }
+
+    .addComments form input,
+    .addComments form textarea,
+    .addComments form button {
+        font-size: 12px; /* Adjust input and button font size */
+    }
+
+    .addComments form button {
+        padding: 10px 18px; /* Adjust button padding for mobile */
+    }
+}

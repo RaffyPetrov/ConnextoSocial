@@ -1,0 +1,307 @@
+/* New Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #121212, #1f1f1f);
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Home Container */
+.home-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(31, 31, 31, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Navbar Wrapper (Sliding Navbar) */
+.navbar-wrapper {
+    position: fixed;
+    left: -270px; /* Initially off the screen */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px; /* Width of the navbar */
+    z-index: 1000;
+    transition: left 0.3s ease; /* Smooth slide-in effect */
+}
+
+/* Navbar Content */
+.navbar {
+    background-color: #1a1a1a;
+    padding: 20px;
+    box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.5);
+    font-family: 'Poppins', sans-serif;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Show Navbar on Hover (Slide-in effect) */
+.navbar-wrapper:hover {
+    left: 0; /* Slide in when hovering */
+}
+
+/* Navbar Logo */
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.navbar .logo img {
+    margin-right: 10px;
+}
+
+.navbar .logo .home {
+    font-family: 'Lobster', cursive;
+    color: #ff6a00;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+/* Remove default list markers (dots) */
+.navbar .nav-links ul {
+    list-style-type: none; /* Removes bullets (dots) from the list */
+    padding-left: 0;       /* Removes any left padding */
+    margin-left: 0;        /* Removes any left margin */
+}
+
+.navbar .nav-links li {
+    margin-bottom: 10px; /* Optional: space between list items */
+}
+
+/* Navbar Links */
+.nav-links a {
+    color: #e0e0e0;
+    padding: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #333;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #ff6a00;
+    color: white;
+}
+
+.nav-links a i {
+    margin-right: 10px;
+}
+
+.logout-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.logout-button:hover {
+    background-color: #ff6a00;
+    transform: translateY(-2px);
+}
+
+
+
+/* Ensure the search bar is hidden initially above the screen */
+.searchbar {
+    position: fixed;
+    top: -60px; /* Hide above the screen initially */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(31, 31, 31, 0.9); /* Semi-transparent background */
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for visibility */
+    display: flex;
+    justify-content: center; /* Center align the search input */
+    align-items: center;
+    transition: top 0.3s ease-in-out; /* Smooth transition for sliding effect */
+}
+
+/* Create a larger hover area at the top of the page */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* Increased height for more space to hover */
+    z-index: 1001; /* Above everything else */
+    background: transparent; /* No background */
+}
+
+/* When hovering the top area, move the search bar into view */
+body:hover .searchbar {
+    top: 0;  /* Slide in the search bar */
+}
+
+/* Search input field inside the search bar */
+.searchbar input {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    border-radius: 25px;
+    padding: 8px 14px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    margin-right: 10px;
+}
+
+.searchbar input:focus {
+    border-color: #ff6a00;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 106, 0, 0.7);
+}
+
+/* Search button */
+.searchbar button {
+    background-color: #ff6a00;
+    border: none;
+    border-radius: 25px;
+    padding: 8px 14px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+.searchbar button:hover {
+    background-color: #e05800;
+    transform: translateY(-2px);
+}
+
+
+
+/* Add padding to content to prevent overlap */
+.home-container {
+    margin-top: 200px; /* Space for the search bar */
+}
+
+/* Posts Container */
+.posts-container {
+    background-color: #e05800;
+    display: grid; /* Updated to grid for better control */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Car Post Cards */
+.car-posts {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping if there's not enough space */
+    justify-content: center; /* Center the cards horizontally */
+    gap: 20px; /* Add some space between the cards */
+    padding: 20px; /* Optional: adds padding around the container */
+    width: 100%;
+    max-width: 1200px; /* Ensure maximum width for the content */
+    margin: 0 auto; /* Center the posts container */
+}
+
+.car-posts .card {
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(7, 7, 7, 0.24);
+    border-radius: 10px;
+    background: #1f1f1f;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 400px; /* Ensure cards are not too wide */
+    flex-basis: 100%; /* Ensure cards take up full space in smaller screen sizes */
+}
+
+/* Hover Effects */
+.car-posts .card:hover {
+    transform: translateY(-5px); /* Elevate on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.car-posts .card .top {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.car-posts .card .bottom {
+    padding: 10px 20px;
+}
+
+.car-posts .card .top .userDetails {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.car-posts .card .top .userDetails img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.car-posts h3 {
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.4em;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #ff6a00;
+}

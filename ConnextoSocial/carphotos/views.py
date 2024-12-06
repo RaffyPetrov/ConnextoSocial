@@ -17,7 +17,7 @@ class CarPhotoAddPage(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         photo = form.save(commit=False)
         photo.user = self.request.user
-        form.save()
+
         return super().form_valid(form)
 
 
@@ -27,7 +27,7 @@ class CarPhotoEditPage(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'templates/photos/car-photo-edit-page.html'
 
     def test_func(self):
-        photo = get_object_or_404(CarPhoto, pk=self.kwargs['pk'])
+        photo = get_object_or_404(CarPhoto, slug=self.kwargs['pk'])
         return self.request.user == photo.user
 
     def get_success_url(self):
@@ -50,9 +50,15 @@ class CarPhotoDetailsPage(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context['likes'] = self.object.like_set.all()
-        context['comments'] = self.object.comment_set.all()
-        context['comment_form'] = CommentForm()
-        self.object.has_liked = self.object.like_set.filter(user=self.request.user).exists()
+        if self.object:
+            context['photo'] = self.object
+            context['likes'] = self.object.like_set.all()
+            context['comments'] = self.object.comment_set.all()
+            context['comment_form'] = CommentForm()
+
+            # Check if the user has liked this photo
+            context['photo'].has_liked = self.object.like_set.filter(user=self.request.user).exists()
+        else:
+            context['photo'] = None
 
         return context

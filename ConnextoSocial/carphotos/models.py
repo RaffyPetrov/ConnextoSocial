@@ -8,12 +8,15 @@ UserModel = get_user_model()
 
 
 class CarPhoto(models.Model):
-    car_photo = models.ImageField(validators=[FileSizeValidator(5)],)
+    car_photo = models.ImageField(upload_to='', validators=[FileSizeValidator(5)],)
     description = models.TextField(max_length=433, validators=[MinLengthValidator(10)], blank=True, null=True)
     location = models.CharField(max_length=66, blank=True, null=True)
 
-    tagged_cars = models.ManyToManyField('cars.Cars', blank=True)
+    tagged_cars = models.ManyToManyField(to='cars.Cars', blank=True)
 
     date_of_publication = models.DateField(auto_now_add=True)
 
-    user = models.ForeignKey(UserModel, on_delete=models.CASCADE)
+    user = models.ForeignKey(to=UserModel, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"CarPhoto by {self.user} on {self.date_of_publication}"

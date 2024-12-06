@@ -33,7 +33,7 @@ class CarEditPage(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     slug_url_kwarg = 'car_slug'
 
     def test_func(self):
-        car = get_object_or_404(Cars, slug=self.kwargs['car'])
+        car = get_object_or_404(Cars, slug=self.kwargs['car_slug'])
         return self.request.user == car.user
 
     def get_success_url(self):
@@ -41,7 +41,7 @@ class CarEditPage(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             'car-details',
             kwargs={
                 'username': self.kwargs['username'],
-                'car': self.kwargs['car_slug'],
+                'car_slug': self.kwargs['car_slug'],
             }
         )
 
@@ -83,7 +83,9 @@ class CarDetailsPage(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
         context['all_photos'] = context['car'].photo_set.all()
+
         context['comment_form'] = CommentForm()
 
         all_photos = context['car'].photo_set.all()

@@ -39,17 +39,18 @@ class ProfileDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return self.request.user == profile.user
 
 
-class ProfileDetailView(DetailView):
+class ProfileDetailView(LoginRequiredMixin, DetailView):
     model = UserModel
     template_name = 'templates/accounts/profile-details-page.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        photos_with_likes = self.object.photo_set.annotate(likes_count=Count('like'))
+        photos_with_likes = self.object.carphoto_set.annotate(likes_count=Count('like'))
+
         context['total_likes_count'] = sum(photo.likes_count for photo in photos_with_likes)
-        context['total_cars_count'] = self.object.car.count()
-        context['total_photos_count'] = self.object.photo_set.count()
+        context['total_cars_count'] = self.object.cars_set.count()
+        context['total_photos_count'] = self.object.carphoto_set.count()
 
         return context
 

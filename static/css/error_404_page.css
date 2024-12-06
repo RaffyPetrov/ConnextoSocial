@@ -1,0 +1,81 @@
+.not-found-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.not-found {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #ffffff;
+    z-index: 1;
+}
+
+.not-found h1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Optional subheading */
+.not-found p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+}
+
+.not-found button {
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.not-found button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.not-found .home-link {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.not-found .home-link:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .not-found h1 {
+        font-size: 45px;
+    }
+
+    .not-found p {
+        font-size: 16px;
+    }
+
+    .not-found button {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+}
