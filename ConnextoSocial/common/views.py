@@ -11,7 +11,7 @@ class HomePageView(ListView):
     model = CarPhoto
     template_name = 'templates/common/home-page.html'
     context_object_name = 'all_photos'
-    paginate_by = 3
+    paginate_by = 5
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -27,7 +27,9 @@ class HomePageView(ListView):
         return context
 
     def get_queryset(self):
-        queryset = super().get_queryset()  # ALl objects
+        # Fetch latest car photos, ordered by the date_of_publication field
+        queryset = CarPhoto.objects.all().order_by('-date_of_publication')  # Most recent first
+
         car_name = self.request.GET.get('car_name')
 
         if car_name:
