@@ -65,11 +65,14 @@
 /* Post Image Container */
 .imgBx {
     position: relative;
-    overflow: revert; /* Prevent image overflow */
-    border-radius: 40%; /* Consistent rounded corners */
+    overflow: hidden; /* Prevent image overflow */
+    border-radius: 20px; /* Rounded corners */
     background-color: #000; /* Fallback background for transparency */
-    max-width: 100%; /* Responsive container width */
-    max-height: 300px; /* Restrict container height */
+    max-width: 100%; /* Ensure the container is responsive */
+    height: auto; /* Allow height to adjust based on image aspect ratio */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
 }
 
 /* Profile Picture Styling */

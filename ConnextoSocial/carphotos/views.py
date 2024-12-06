@@ -27,7 +27,7 @@ class CarPhotoEditPage(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'templates/photos/car-photo-edit-page.html'
 
     def test_func(self):
-        photo = get_object_or_404(CarPhoto, slug=self.kwargs['pk'])
+        photo = get_object_or_404(CarPhoto, pk=self.kwargs['pk'])
         return self.request.user == photo.user
 
     def get_success_url(self):

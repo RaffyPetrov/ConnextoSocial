@@ -35,7 +35,6 @@ body {
 }
 
 
-
 /* Like Button */
 .heart-btn {
     background: none;
@@ -77,7 +76,6 @@ body {
 }
 
 
-
 /* Custom Share Button Styling */
 .share-btn-custom {
     display: inline-flex;
@@ -114,7 +112,6 @@ body {
 }
 
 
-
 /* Likes Count Styling */
 .likes {
     font-size: 14px;
@@ -122,7 +119,6 @@ body {
     font-weight: bold;
     margin-top: 10px;
 }
-
 
 
 /* Action Buttons Styling */
@@ -198,8 +194,6 @@ body {
 }
 
 
-
-
 /* Navbar Wrapper (Sliding Navbar) */
 .navbar-wrapper {
     position: fixed;
@@ -247,8 +241,8 @@ body {
 /* Remove default list markers (dots) */
 .navbar .nav-links ul {
     list-style-type: none; /* Removes bullets (dots) from the list */
-    padding-left: 0;       /* Removes any left padding */
-    margin-left: 0;        /* Removes any left margin */
+    padding-left: 0; /* Removes any left padding */
+    margin-left: 0; /* Removes any left margin */
 }
 
 .navbar .nav-links li {
@@ -294,7 +288,6 @@ body {
 }
 
 
-
 /* Ensure the search bar is hidden initially above the screen */
 .searchbar {
     position: fixed;
@@ -319,13 +312,15 @@ body::before {
     left: 0;
     width: 100%;
     height: 120px; /* Increased height for more space to hover */
-    z-index: 1001; /* Above everything else */
+    z-index: 1000; /* Slightly lower z-index than search bar */
     background: transparent; /* No background */
+    pointer-events: none; /* Make sure it doesn’t block interactions */
 }
+
 
 /* When hovering the top area, move the search bar into view */
 body:hover .searchbar {
-    top: 0;  /* Slide in the search bar */
+    top: 0; /* Slide in the search bar */
 }
 
 /* Search input field inside the search bar */
@@ -338,6 +333,7 @@ body:hover .searchbar {
     font-size: 14px;
     transition: all 0.3s ease-in-out;
     margin-right: 10px;
+    pointer-events: auto; /* Ensure pointer events are enabled for input */
 }
 
 .searchbar input:focus {
@@ -360,13 +356,13 @@ body:hover .searchbar {
     align-items: center;
     justify-content: center;
     height: 40px;
+    pointer-events: auto; /* Ensure pointer events are enabled for button */
 }
 
 .searchbar button:hover {
     background-color: #e05800;
     transform: translateY(-2px);
 }
-
 
 
 /* Add padding to content to prevent overlap */
