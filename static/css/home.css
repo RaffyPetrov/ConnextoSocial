@@ -3,6 +3,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
+
+/* Center the form container (if needed) */
+.register-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Adjust according to your needs */
+}
+
+/* Style the Register Button */
+.register-btn {
+    background-color: #FFA500; /* Orange color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 12px 24px; /* Add padding for size */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    text-align: center;
+}
+
+/* Hover effect */
+.register-btn:hover {
+    background-color: #ff7f32; /* Darker orange color */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+/* Focus effect for accessibility */
+.register-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.7); /* Orange glow effect */
+}
+
+
 /* Reset CSS */
 * {
     margin: 0;

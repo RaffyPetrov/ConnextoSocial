@@ -213,9 +213,18 @@ select:focus,
     background-color: #f5f5f5;
     box-sizing: border-box;
     font-size: 14px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
 }
 
+/* Focus effect on input field */
 #id_tagged_cars:focus {
-    border-color: #7e57c2;
+    border-color: #FF7800; /* Highlight border with orange on focus */
+    background-color: #fff; /* Change background to white when focused */
+    outline: none; /* Remove the default browser outline */
+}
+
+/* Hover effect on input field */
+#id_tagged_cars:hover {
+    border-color: #FF6600; /* Slightly darker border color on hover */
+    background-color: #f0f0f0; /* Slightly darker background on hover */
 }

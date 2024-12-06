@@ -1,12 +1,11 @@
-/* Set default color to black and add hover effect with smaller font size */
 .interactive {
-    color: #000000; /* Default color (black) */
-    font-size: 12px; /* Smaller font size */
+    color: #ff7800;           /* Default color (orange) */
+    font-size: 30px;           /* Font size */
     transition: color 0.3s ease; /* Smooth transition effect */
 }
 
 .interactive:hover {
-    color: #ff6600; /* Darker orange color on hover */
+    color: #ff6600;           /* Darker orange color on hover */
 }
 
 

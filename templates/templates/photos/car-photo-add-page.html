@@ -2,27 +2,45 @@
 
 {% block content %}
 	<!-- Start Add Car and Photo Section -->
-	<div class="edit-delete edit-photo">
-		<h2>Create Car</h2>
+	<div class="edit-delete-container">
+		
+		<!-- Unified Form Section (Add Car + Upload Photo) -->
+		<div class="edit-delete-section unified-form">
+			
+			<!-- Add Car Form -->
+			<form action="{% url 'add-car' %}" method="post">
+				{% csrf_token %}
+				<h3>Create Car</h3>
+				
+				<!-- Render each field without its label -->
+				{% for field in car_form %}
+					<div class="form-field">
+						{{ field }}  <!-- Renders only the input field -->
+					</div>
+				{% endfor %}
+				
+				<button class="add-btn" type="submit">Create Car</button>
+			</form>
 
-		<!-- Start Add Car Form -->
-        <form action="{% url 'add-car' %}" method="post">
-			{% csrf_token %}
-			{{ car_form.as_p }}
-			<button class="add-btn" type="submit">Add Car</button>
-		</form>
-		<!-- End Add Car Form -->
+			<hr>
 
-		<hr>
-
-		<!-- Start Add Photo Form -->
-		<h3>Upload Car Photo</h3>
-		<form id="photo-form" method="post" enctype="multipart/form-data">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<button class="add-btn" type="submit">Upload Photo</button>
-		</form>
-		<!-- End Add Photo Form -->
+			<!-- Upload Photo Form -->
+			<form id="photo-form" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<h3>Upload Car Photo</h3>
+				
+				<!-- Render each field without its label -->
+				{% for field in form %}
+					<div class="form-field">
+						{{ field }}  <!-- Renders only the input field -->
+					</div>
+				{% endfor %}
+				
+				<button class="add-btn" type="submit">Upload Photo</button>
+			</form>
+		</div>
+		<!-- End Unified Form Section -->
+		
 	</div>
 	<!-- End Add Car and Photo Section -->
 {% endblock %}

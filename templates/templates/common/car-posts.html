@@ -101,6 +101,7 @@
 
 
 
+
 	{% for car in photo.tagged_cars.all %}
 		<!-- Link to First Tagged Car Details Page-->
 		<a href="{% url 'car-details' photo.user.profile.get_full_name car.slug %}">
@@ -133,7 +134,8 @@
 									<div class="image">
 										<!-- User Profile Image -->
 										{% if comment.user.profile.profile_picture %}
-											<img src="{{ comment.user.profile.profile_picture }}" alt="img8">
+											<img src="{{ comment.user.profile.profile_picture }}"
+												 alt="img8">
 										{% else %}
 											<img src="{% static 'images/person.png' %}" alt="img8">
 										{% endif %}

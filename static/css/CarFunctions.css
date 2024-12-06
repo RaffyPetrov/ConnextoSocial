@@ -214,27 +214,67 @@ body {
 
 input[type="text"], input[type="file"], textarea {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin: 5px 0;
     font-size: 1rem;
 }
 
+
+/* Container for both forms */
+.edit-delete-container {
+    display: flex;                  /* Makes the container a flex container */
+    justify-content: space-between; /* Spaces out the sections horizontally */
+    gap: 20px;                      /* Adds space between the sections */
+    padding: 20px;
+}
+
+/* Each section (Add Car and Upload Photo) */
+.edit-delete-section {
+    flex: 1;                      /* Makes each section take equal width */
+    padding: 20px;                 /* Adds padding inside each section */
+    background-color: #f9f9f9;    /* Light background for sections */
+    border-radius: 8px;           /* Rounded corners for each section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow */
+    box-sizing: border-box;       /* Ensures padding doesn't affect width */
+}
+
+/* Title styles for each section */
+.edit-delete-section h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center; /* Centers the title horizontally */
+}
+
+
+/* Optional: If you want the forms to have some spacing between their fields */
+.edit-delete-section form p {
+    margin-bottom: 15px;
+}
+
+
 .add-btn {
-    background-color: #4CAF50;
+    background-color: #FF7800;
     color: white;
     border: none;
-    padding: 12px 25px;
-    font-size: 1.1rem;
+    padding: 10px 20px;
+    font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Makes the button stretch across the form */
 }
 
 .add-btn:hover {
-    background-color: #45a049;
-    transform: translateY(-3px);
+    background-color: #e96b00;
+    transform: scale(1.05);
+}
+
+.add-btn:active {
+    background-color: #e16b00;
+    transform: scale(1);
 }
 
 .divider {
