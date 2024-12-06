@@ -18,6 +18,50 @@
     transform: scale(1.05); /* Zoom effect for hover state */
 }
 
+
+/* Style for the publication date with hover effect */
+.postTime {
+    font-size: 14px; /* Smaller font size */
+    color: #555; /* Lighter gray color for the text */
+    margin-bottom: 10px; /* Adds some space below the date */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transformation */
+}
+
+/* Hover effect for the publication date */
+.postTime:hover {
+    color: #ff0026; /* Change text color to orange on hover */
+    transform: scale(1.05); /* Slightly enlarge the text on hover */
+    cursor: pointer; /* Change cursor to a pointer to indicate interactivity */
+}
+
+
+
+/* Basic button styles */
+.see-details-btn {
+    display: contents;
+    text-decoration: none; /* Removes the underline */
+    background-color: black; /* Black background for the button */
+    color: orange; /* Orange text color */
+    padding: 12px 20px;
+    border-radius: 5px; /* Rounded corners */
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid orange; /* Orange border for contrast */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect */
+.see-details-btn:hover {
+    background-color: orange; /* Orange background on hover */
+    color: black; /* Change text color to black on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+
+
+
 /* Post Image Container */
 .imgBx {
     position: relative;
@@ -78,9 +122,9 @@
     padding: 10px; /* Comfortable padding for better interaction */
     border-radius: 8px; /* Rounded corners */
     border: 1px solid #ddd;
-    background-color: #f9f9f9; /* Light background for inputs */
+    background-color: #000; /* Light background for inputs */
     font-size: 14px; /* Slightly larger font for readability */
-    color: #333;
+    color: #ff7800;
     transition: all 0.3s ease;
     text-transform: lowercase; /* Ensure input text is lowercase */
 }
@@ -100,7 +144,7 @@
     font-family: Arial, sans-serif; /* Consistent font */
     line-height: 1.4; /* Improve readability */
     border: 1px solid #ffffff;
-    background-color: #fafafa; /* Light background color */
+    background-color: #000000; /* Light background color */
 }
 
 /* Submit Button Styling */

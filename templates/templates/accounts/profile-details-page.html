@@ -36,10 +36,6 @@
 					<span>{{ total_photos_count }}</span>
 					<p>posts</p>
 
-					<!-- Total Number of Cars -->
-					<span>{{ total_cars_count }}</span>
-					<p>cars</p>
-
 					<!-- Total Number of Likes -->
 					<span>{{ total_likes_count }}</span>
 					<p>likes</p>
@@ -48,34 +44,9 @@
 		</div>
 		<!-- End Profile Personal Data Section -->
 
-{#		<!-- Start Cars Section -->#}
-{#		<div class="cars">#}
-{#			<h2>Your Cars</h2>#}
-{#			<div class="statuses">#}
-{#				{% for car in object.car_set.all %}#}
-{#					<a href="{% url 'car-details' object.profile.get_full_name car.slug %}" class="car-link">#}
-{#						<div class="car-info">#}
-{#							<div class="status">#}
-{#								<div class="image">#}
-{#									<!-- Car Image -->#}
-{#									<img src="{{ car.car_photo.url }}" alt="{{ car.car_name }}"/>#}
-{#								</div>#}
-{#							</div>#}
-{#							<!-- Car Name -->#}
-{#							<p class="car-name">{{ car.car_name }}</p>#}
-{#						</div>#}
-{#					</a>#}
-{#				{% empty %}#}
-{#					<p>You haven't added any cars yet.</p>#}
-{#				{% endfor %}#}
-{#			</div>#}
-{#		</div>#}
-{#		<!-- End Cars Section -->#}
-
-
 		<!-- Start Posts Section -->
 		<div class="posts">
-			<h2>Your Latest Car Posts</h2>
+			<h2>Latest Car Posts of {{ object.profile.get_full_name }}</h2>
 			<div class="post-photos">
 				{% for photo in object.carphoto_set.all %}
 					<a href="{% url 'photo-details' photo.pk %}">
@@ -93,7 +64,7 @@
 						</div>
 					</a>
 				{% empty %}
-					<p>You haven't uploaded any car photos yet.</p>
+					<p>{{ object.profile.get_full_name }} haven't uploaded any car photos yet.</p>
 				{% endfor %}
 			</div>
 		</div>

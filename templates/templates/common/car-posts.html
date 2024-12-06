@@ -68,108 +68,103 @@
 	</div>
 	<!-- -->
 
+
 	<div class="bottom">
-		<!-- like and share buttons -->
+		<!-- Like and Share Buttons -->
 		<div class="actionBtns">
 			<div class="left">
-                    <span class="heart">
-				{% if photo.user and photo.user.pk %}
-					<a href="{% url 'profile-details' photo.user.pk %}">
-					</a>
-				{% else %}
-					<p>User not available</p>
-				{% endif %}
-						{% if photo.has_liked %}
-							<i class="fa-solid fa-heart" style="color: #ed4040;"></i>
-						{% else %}
-							<i class="fa-regular fa-heart"></i>
-						{% endif %}
+				<!-- Like Button Form -->
+				<form method="POST" action="{% url 'like' photo.pk %}">
+					{% csrf_token %}
+					<button type="submit" class="heart-btn {% if photo.has_liked %}liked{% endif %}">
+						<span class="heart-icon">&hearts;</span>
+						<span class="like-text">{% if photo.has_liked %} {{ photo.like_set.count }} likes{% else %}Like{% endif %}</span>
+					</button>
+				</form>
 
-                    </span>
+				<!-- Share Button -->
 				{% if photo.id %}
-					<a href="{% url 'share' photo.id %}">
-						<i class="fa-solid fa-share"></i>
-					</a>
+					<button class="share-btn">
+						<img src="{% static 'images/share-icon.png' %}" alt="Share" class="share-icon">
+						Share
+					</button>
 				{% else %}
 					<p>Share option unavailable</p>
 				{% endif %}
-
 			</div>
 		</div>
-		<!-- -->
+	</div>
 
-		<a href="#">
-			<p class="likes">{{ photo.like_set.count }} likes</p>
+
+
+
+	{% for car in photo.tagged_cars.all %}
+		<!-- Link to First Tagged Car Details Page-->
+		<a href="{% url 'car-details' photo.user.profile.get_full_name car.slug %}">
+			<p class="message">
+				<b>{{ car.name }}</b>
+			</p>
 		</a>
+	{% endfor %}
 
-		{% for car in photo.tagged_cars.all %}
-			<!-- Link to First Tagged Car Details Page-->
-			<a href="{% url 'car-details' photo.user.profile.get_full_name car.slug %}">
-				<p class="message">
-					<b>{{ car.name }}</b>
-				</p>
-			</a>
-		{% endfor %}
+	{% if photo_page %}
+		<!-- Photo description -->
+		<p class="car-details">{{ photo.description }}</p>
+	{% else %}
+		<h3 class="postTime">{{ photo.date_of_publication }}</h3>
+		<a href="{% url 'photo-details' photo.pk %}" class="see-details-btn">
+			<h4 class="details">See details</h4>
+		</a>
+	{% endif %}
 
-		{% if photo_page %}
-			<!-- Photo description -->
-			<p class="car-details">{{ photo.description }}</p>
-		{% else %}
-			<a href="{% url 'photo-details' photo.pk %}">
-				<h4 class="details">See details</h4>
-			</a>
-		{% endif %}
 
-		<h5 class="postTime">{{ photo.date_of_publication }}</h5>
 
-		{% if photo_page %}
-			{% for comment in comments %}
-				<div class="comments">
-					<div class="top">
-						<div class="userDetails">
-							<div class="comment-data">
-								<div class="profilepic">
-									<div class="profile_img">
-										<div class="image">
-											<!-- User Profile Image -->
-											{% if comment.user.profile.profile_picture %}
-												<img src="{{ comment.user.profile.profile_picture }}" alt="img8">
-											{% else %}
-												<img src="{% static 'images/person.png' %}" alt="img8">
-											{% endif %}
-										</div>
+	{% if photo_page %}
+		{% for comment in comments %}
+			<div class="comments">
+				<div class="top">
+					<div class="userDetails">
+						<div class="comment-data">
+							<div class="profilepic">
+								<div class="profile_img">
+									<div class="image">
+										<!-- User Profile Image -->
+										{% if comment.user.profile.profile_picture %}
+											<img src="{{ comment.user.profile.profile_picture }}" alt="img8">
+										{% else %}
+											<img src="{% static 'images/person.png' %}" alt="img8">
+										{% endif %}
 									</div>
 								</div>
-								<p>
-									<!-- Link to User Profile Details Page-->
-									<!-- User First and/or Last Name or username-->
-									<a href="{% url 'profile-details' comment.user.pk %}">{{ comment.user.profile.get_full_name }}</a>
-									<!-- User Comment -->
-									{{ comment.text }}
-								</p>
 							</div>
-							<span>{{ comment.date_time_of_publication }}</span>
+							<p>
+								<!-- Link to User Profile Details Page-->
+								<!-- User First and/or Last Name or username-->
+								<a href="{% url 'profile-details' comment.user.pk %}">{{ comment.user.profile.get_full_name }}</a>
+								<!-- User Comment -->
+								{{ comment.text }}
+							</p>
 						</div>
+						<span>{{ comment.date_time_of_publication }}</span>
 					</div>
 				</div>
-				<!-- End Comments Section -->
-			{% endfor %}
+			</div>
+			<!-- End Comments Section -->
+		{% endfor %}
 
+	{% endif %}
+
+	<!-- add comments section -->
+	<div class="addComments">
+
+		{% if photo.pk %}
+			<form method="post" action="{% url 'comment' photo.pk %}">
+				{% csrf_token %}
+				{{ comment_form.as_p }}
+				<button type="submit">Post</button>
+			</form>
+		{% else %}
+			<p>Unable to add comments for this photo.</p>
 		{% endif %}
-
-		<!-- add comments section -->
-		<div class="addComments">
-
-			{% if photo.pk %}
-				<form method="post" action="{% url 'comment' photo.pk %}">
-					{% csrf_token %}
-					{{ comment_form.as_p }}
-					<button type="submit">Post</button>
-				</form>
-			{% else %}
-				<p>Unable to add comments for this photo.</p>
-			{% endif %}
-		</div>
-		<!--  -->
 	</div>
 </div>

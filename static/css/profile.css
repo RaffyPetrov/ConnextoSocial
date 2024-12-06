@@ -1,7 +1,7 @@
 .profile {
     margin: 50px auto;
-    width: 60%;
-    background-color: #b43131;
+    width: 100%;
+    background-color: #f8f8f8;
     padding: 10px;
     border-radius: 17px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -24,8 +24,9 @@
     width: 120px; /* Reduced size for the profile image */
     height: 120px; /* Keep it square */
     margin-top: 10px;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 50%; /* Make the image round */
+    object-fit: cover; /* Ensure the image covers the area */
+    margin-right: 20px; /* Space between the image and the next content */
 }
 
 .profile_img img:hover {
@@ -106,47 +107,92 @@
     opacity: 0.8;
 }
 
+
 /* Personal Information Edit Section */
 .personal .edit {
     flex-grow: 1;
     margin-left: 20px;
+    transition: all 0.3s ease; /* Smooth transition for the edit section */
 }
 
+/* Title for the editable section */
 .personal .edit p {
-    font-size: 24px;
+    font-size: 28px; /* Larger font size for section titles */
     font-weight: bold;
     text-transform: capitalize;
     margin-bottom: 10px;
+    color: #333; /* Dark color for better readability */
+    transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
+/* Hover effect for the editable section title */
+.personal .edit p:hover {
+    color: orange; /* Change color to orange on hover */
+    cursor: pointer; /* Pointer cursor for interactivity */
+}
+
+/* Edit icon hover effect */
 .personal .edit img {
-    width: 25px;
+    width: 30px; /* Larger icon size for visibility */
     cursor: pointer;
     margin-left: 10px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Hover effect for the edit icon */
 .personal .edit img:hover {
-    transform: scale(1.2);
+    transform: scale(1.2); /* Enlarge the icon */
+    opacity: 0.8; /* Slightly fade the icon on hover */
 }
 
 /* Personal Data Styling */
 .personal .data {
     display: flex;
     justify-content: space-between;
-    font-size: 16px;
+    font-size: 24px; /* Larger font size for data */
     margin-top: 20px;
+    transition: all 0.3s ease; /* Smooth transition for the entire data section */
 }
 
+/* Hover effect for the personal data section */
+.personal .data:hover {
+    background-color: #f9f9f9; /* Light background color on hover for emphasis */
+    padding: 10px; /* Adds padding to make the hover area larger */
+    border-radius: 8px; /* Round the corners of the hover effect */
+}
+
+/* Styling for the labels (span elements) */
 .personal .data span {
     font-weight: bold;
-    color: #333;
+    color: #333; /* Default label color */
+    text-transform: capitalize;
+    transition: color 0.3s ease; /* Smooth color change */
 }
 
-.personal .data p {
-    margin-right: 15px;
-    margin-top: 5px;
+/* Hover effect for the labels */
+.personal .data span:hover {
+    color: orange; /* Change label color to orange on hover */
+    cursor: pointer; /* Pointer cursor for interactivity */
 }
+
+/* Styling for the personal data (p elements) */
+.personal .data p {
+    margin-right: 30px;
+    margin-top: 1px;
+    font-size: 32px; /* Larger font size for personal data */
+    color: #555; /* Slightly lighter color for data */
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scaling */
+}
+
+/* Hover effect for personal data */
+.personal .data p:hover {
+    color: orange; /* Change color to orange on hover */
+    transform: scale(1.2); /* Enlarge the data text */
+    cursor: pointer; /* Pointer cursor for interactivity */
+}
+
+
 
 /* Names Section */
 .names {

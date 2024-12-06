@@ -34,6 +34,172 @@ body {
     overflow: hidden;
 }
 
+
+
+/* Like Button */
+.heart-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.2s ease, color 0.3s ease;
+    color: gray; /* Default color for unliked state */
+    font-weight: bold;
+}
+
+.heart-icon {
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Liked state (filled heart and orange color) */
+.heart-btn.liked {
+    color: orange; /* Change color for liked state */
+}
+
+.heart-btn.liked .heart-icon {
+    color: orange; /* Change heart icon color when liked */
+}
+
+/* Hover effect on button */
+.heart-btn:hover {
+    transform: scale(1.1);
+}
+
+.heart-btn:active {
+    transform: scale(1);
+    opacity: 0.8;
+}
+
+
+
+/* Custom Share Button Styling */
+.share-btn-custom {
+    display: inline-flex;
+    align-items: center;
+    background-color: transparent; /* Transparent background */
+    color: #333;
+    font-size: 16px; /* Increase font size for better visibility */
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 14px; /* Increase padding for a larger button */
+    border-radius: 12px; /* Slightly larger border-radius for a smoother look */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Custom Share Icon Image */
+.share-btn-custom .share-icon {
+    width: 18px; /* Increase icon width slightly */
+    height: 18px; /* Increase icon height slightly */
+    object-fit: contain; /* Ensures the image fits within the container without distortion */
+    margin-right: 8px; /* Increase the space between the icon and text */
+}
+
+/* Hover Effect for Share Button */
+.share-btn-custom:hover {
+    background-color: #f8f8f8; /* Light background on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Active State for Share Button */
+.share-btn-custom:active {
+    background-color: #e0e0e0; /* Darker background on click */
+    transform: scale(1);
+}
+
+
+
+/* Likes Count Styling */
+.likes {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+
+/* Action Buttons Styling */
+.actionBtns .like-btn,
+.actionBtns .share-btn {
+    display: contents;
+    align-items: center;
+    justify-content: center;
+    gap: 6px; /* Space between icon and text */
+    padding: 10px 20px; /* Comfortable padding */
+    font-size: 14px; /* Readable font size */
+    font-weight: bold;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    color: #fff; /* Default text color */
+    background-color: #ff7f00; /* Orange background for buttons */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Liked Button (Red Heart) */
+.actionBtns .like-btn.liked {
+    background-color: #ed4040; /* Red for liked state */
+}
+
+/* Hover Effects */
+.actionBtns .like-btn:hover,
+.actionBtns .share-btn:hover {
+    background-color: #e76f00; /* Darker orange on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+.actionBtns .like-btn.liked:hover {
+    background-color: #d93737; /* Darker red for liked hover state */
+}
+
+/* Active State (Click Effect) */
+.actionBtns .like-btn:active,
+.actionBtns .share-btn:active {
+    transform: translateY(0); /* Reset lift effect */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow on click */
+}
+
+/* Share Button Specific Styling */
+.actionBtns .share-btn {
+    background-color: #00b4d8; /* Teal background for share button */
+}
+
+.actionBtns .share-btn:hover {
+    background-color: #0093b3; /* Darker teal on hover */
+}
+
+/* General Icon Styling */
+.actionBtns i {
+    font-size: 100px; /* Icon size */
+}
+
+/* Likes Count Styling */
+.likes {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555; /* Neutral color for likes count */
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.likes:hover {
+    color: #ff7f00; /* Highlight likes count on hover */
+}
+
+
+
+
 /* Navbar Wrapper (Sliding Navbar) */
 .navbar-wrapper {
     position: fixed;
@@ -118,7 +284,6 @@ body {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    width: 100%;
     text-align: left;
     transition: background-color 0.3s, transform 0.2s;
 }
@@ -304,4 +469,17 @@ body:hover .searchbar {
 
 .pagination a:hover {
     background-color: #ff6a00;
+}
+
+/* Responsive Styling for Share Button */
+@media (max-width: 768px) {
+    .share-btn-custom {
+        font-size: 14px; /* Smaller font size on mobile */
+        padding: 6px 10px; /* Adjust padding */
+    }
+
+    .share-btn-custom .share-icon {
+        width: 18px; /* Smaller icon size on mobile */
+        height: 18px; /* Smaller icon size on mobile */
+    }
 }
