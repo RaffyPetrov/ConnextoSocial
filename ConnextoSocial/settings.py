@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'ConnextoSocial.carphotos.apps.CarphotosConfig',
     'ConnextoSocial.common.apps.CommonConfig',
     'ConnextoSocial.cars.apps.CarsConfig',
+    'ConnextoSocial.privatechat.apps.PrivatechatConfig'
 ]
 
 MIDDLEWARE = [
