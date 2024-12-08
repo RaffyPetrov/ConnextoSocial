@@ -8,4 +8,3 @@ class AccountsConfig(AppConfig):
     def ready(self):
         import ConnextoSocial.accounts.signals
 
-
