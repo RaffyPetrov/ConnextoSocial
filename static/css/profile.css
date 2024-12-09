@@ -149,7 +149,7 @@
 .personal .data {
     display: flex;
     justify-content: space-between;
-    font-size: 24px; /* Larger font size for data */
+    font-size: 34px; /* Larger font size for data */
     margin-top: 20px;
     transition: all 0.3s ease; /* Smooth transition for the entire data section */
 }

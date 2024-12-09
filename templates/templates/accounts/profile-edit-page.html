@@ -5,8 +5,8 @@
     <div class="edit-delete">
         <h2>Edit Profile</h2>
 
-        <!-- Start Edit Profile From -->
-        <form method="post">
+        <!-- Start Edit Profile Form -->
+        <form method="post" enctype="multipart/form-data">  <!-- Add enctype here for file uploads -->
             {% csrf_token %}
 
             {% for field in form %}
@@ -14,7 +14,7 @@
                 <p class="error"> {{ field.errors }} </p>
                 <div class="label-input">
                     <label>{{ field.label }}</label>
-                    {{ field }}
+                    {{ field }}  <!-- Field rendering -->
                 </div>
                 <br>
 

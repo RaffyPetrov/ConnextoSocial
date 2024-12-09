@@ -9,7 +9,7 @@
 				<div class="image">
 					<!-- Profile Image -->
 					{% if object.profile.profile_picture %}
-						<img src="{{ object.profile.profile_picture }}" alt="Profile Picture"/>
+						<img src="{{ object.profile.profile_picture.url }}" alt="Profile Picture"/>
 					{% else %}
 						<img src="{% static 'images/person.png' %}" alt="Default Profile Picture"/>
 					{% endif %}
@@ -31,6 +31,7 @@
 					{% endif %}
 				</div>
 
+				<!-- User's Personal Information -->
 				<div class="data">
 					<!-- Total Number of Posts -->
 					<span>{{ total_photos_count }}</span>
@@ -39,6 +40,17 @@
 					<!-- Total Number of Likes -->
 					<span>{{ total_likes_count }}</span>
 					<p>likes</p>
+
+					<!-- Date of Birth -->
+					{% if object.profile.date_of_birth %}
+						<p>{{ object.profile.date_of_birth|date:"F j, Y" }} year</p>
+					{% else %}
+						<p>Date of Birth not provided</p>
+					{% endif %}
+					<!-- Description profile -->
+					{% if object.profile.description %}
+						<p>{{ object.profile.description }}</p>
+					{% endif %}
 				</div>
 			</div>
 		</div>
@@ -64,7 +76,7 @@
 						</div>
 					</a>
 				{% empty %}
-					<p>{{ object.profile.get_full_name }} haven't uploaded any car photos yet.</p>
+					<p>{{ object.profile.get_full_name }} hasn't uploaded any car photos yet.</p>
 				{% endfor %}
 			</div>
 		</div>
