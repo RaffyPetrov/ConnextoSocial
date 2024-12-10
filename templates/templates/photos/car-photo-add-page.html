@@ -1,46 +1,54 @@
 {% extends 'templates/common/base.html' %}
 
 {% block content %}
-	<!-- Start Add Car and Photo Section -->
-	<div class="edit-delete-container">
-		
-		<!-- Unified Form Section (Add Car + Upload Photo) -->
-		<div class="edit-delete-section unified-form">
-			
-			<!-- Add Car Form -->
-			<form action="{% url 'add-car' %}" method="post">
-				{% csrf_token %}
-				<h3>Create Car</h3>
-				
-				<!-- Render each field without its label -->
-				{% for field in car_form %}
-					<div class="form-field">
-						{{ field }}  <!-- Renders only the input field -->
-					</div>
-				{% endfor %}
-				
-				<button class="add-btn" type="submit">Create Car</button>
-			</form>
+    <!-- Start Add Car and Photo Section -->
+    <div class="edit-delete-container">
 
-			<hr>
+        <!-- Unified Form Section (Add Car + Upload Photo) -->
+        <div class="edit-delete-section unified-form">
 
-			<!-- Upload Photo Form -->
-			<form id="photo-form" method="post" enctype="multipart/form-data">
-				{% csrf_token %}
-				<h3>Upload Car Photo</h3>
-				
-				<!-- Render each field without its label -->
-				{% for field in form %}
-					<div class="form-field">
-						{{ field }}  <!-- Renders only the input field -->
-					</div>
-				{% endfor %}
-				
-				<button class="add-btn" type="submit">Upload Photo</button>
-			</form>
-		</div>
-		<!-- End Unified Form Section -->
-		
+            <!-- Add Car Form -->
+            <form action="{% url 'add-car' %}" method="post">
+                {% csrf_token %}
+                <h3>Create Car</h3>
+
+                <!-- Render car_name and car_model fields as before -->
+                <div class="form-field">
+                    <label for="{{ car_form.car_name.id_for_label }}">Car Name</label>
+                    {{ car_form.car_name }}
+                </div>
+
+                <div class="form-field">
+                    <label for="{{ car_form.car_model.id_for_label }}">Car Model</label>
+                    {{ car_form.car_model }}
+                </div>
+
+                <!-- Render only the year_of_production field with its label -->
+                <div class="form-field">
+                    <label for="{{ car_form.year_of_production.id_for_label }}">Year of Production</label>
+                    {{ car_form.year_of_production }}  <!-- Renders the year_of_production input field -->
+                </div>
+
+                <button class="add-btn" type="submit">Create Car</button>
+            </form>
+
+            <hr>
+
+            <!-- Upload Photo Form -->
+            <form id="photo-form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h3>Upload Car Photo</h3>
+
+                <!-- Render the photo form fields as before -->
+                {% for field in form %}
+                    <div class="form-field">
+                        {{ field }}  <!-- Renders only the input field -->
+                    </div>
+                {% endfor %}
+
+                <button class="add-btn" type="submit">Upload Photo</button>
+            </form>
+        </div>
 	</div>
-	<!-- End Add Car and Photo Section -->
+        <!-- End Unifi
 {% endblock %}

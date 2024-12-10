@@ -8,8 +8,10 @@ UserModel = get_user_model()
 class Cars(models.Model):
     car_name = models.CharField(max_length=70)
     car_model = models.CharField(max_length=40)
-
-    car_photo = models.URLField()
+    year_of_production = models.DateField(
+        blank=True,
+        null=True,
+    )
 
     slug = models.SlugField(null=True, blank=True, unique=True, editable=False)
 

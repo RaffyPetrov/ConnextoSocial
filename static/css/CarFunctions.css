@@ -264,7 +264,7 @@ input[type="text"], input[type="file"], textarea {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 100%; /* Makes the button stretch across the form */
+    width: 65%; /* Makes the button stretch across the form */
 }
 
 .add-btn:hover {

@@ -1,0 +1,20 @@
+{% extends 'templates/common/base.html' %}
+
+{% block content %}
+    <!-- Starts Edit Video Section -->
+    <div class="edit-delete edit-video">
+        <h2>Edit Video</h2>
+
+        <!-- Starts Edit Video Form -->
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <!-- Edit Video Button -->
+            <button class="edit-btn" type="submit">Update Video</button>
+        </form>
+        <!-- End Edit Video Form -->
+
+    </div>
+    <!-- End Edit Video Section -->
+
+{% endblock %}

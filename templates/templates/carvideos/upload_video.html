@@ -1,0 +1,70 @@
+{% extends 'templates/common/base.html' %}
+
+{% block content %}
+    <div class="edit-delete-container">
+        <div class="edit-delete-section unified-form">
+            <hr>
+            <!-- Upload Video Form -->
+            <form id="video-form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h3>Upload Car Video</h3>
+
+                <!-- Render title field (car video title) -->
+                <div class="form-field">
+                    <label for="{{ form.title.id_for_label }}">{{ form.title.label }}</label>
+                    {{ form.title }}  <!-- Renders the title input field -->
+                </div>
+
+                <!-- Render tagged_cars field from CarVideo (under title) -->
+                <div class="form-field">
+                    <label for="{{ form.tagged_cars.id_for_label }}">{{ form.tagged_cars.label }}</label>
+                    <div class="tagged-cars-wrapper">
+                        {{ form.tagged_cars }}  <!-- Renders the tagged_cars input field -->
+                    </div>
+                </div>
+
+                <!-- Render video file upload field -->
+                <div class="form-field">
+                    <label for="{{ form.video_file.id_for_label }}">{{ form.video_file.label }}</label>
+                    {{ form.video_file }}  <!-- Renders the video upload field -->
+                </div>
+
+                <!-- Render description field -->
+                <div class="form-field">
+                    <label for="{{ form.description.id_for_label }}">{{ form.description.label }}</label>
+                    {{ form.description }}  <!-- Renders the description input field -->
+                </div>
+
+                <!-- Render other fields dynamically (excluding title, tagged_cars, video, and description) -->
+                <div class="additional-fields">
+                    {% for field in form %}
+                        {% if field.name != 'title' and field.name != 'tagged_cars' and field.name != 'video_file' and field.name != 'description' %}
+                            <div class="form-field">
+                                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                {{ field }}  <!-- Renders the input field -->
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                <!-- Error Handling -->
+                {% if form.errors %}
+                    <div class="form-errors">
+                        <ul>
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                <!-- Submit Button -->
+                <button class="add-btn" type="submit">Upload Video</button>
+            </form>
+        </div>
+        <!-- End Unified Form Section -->
+    </div>
+    <!-- End Add Car and Video Section -->
+{% endblock %}

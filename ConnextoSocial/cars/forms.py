@@ -6,17 +6,17 @@ from ConnextoSocial.cars.models import Cars
 class CarBaseForm(forms.ModelForm):
     class Meta:
         model = Cars
-        fields = ['car_name', 'car_photo', 'car_model',]
+        fields = ['car_name', 'year_of_production', 'car_model',]
 
         widgets = {
             'car_name': forms.TextInput(attrs={'placeholder': 'Car name'}),
-            'car_photo': forms.TextInput(attrs={'placeholder': 'Link to Image'}),
+            'year_of_production': forms.DateInput(attrs={'type': 'date', 'placeholder': 'Year of production'}),
             'car_model': forms.TextInput(attrs={'placeholder': 'Car Model'}),
         }
 
         labels = {
             'car_name': 'Car Name',
-            'car_photo': 'Link to Image',
+            'year_of_production': 'Year of production',
             'car_model': 'Car Model',
         }
 

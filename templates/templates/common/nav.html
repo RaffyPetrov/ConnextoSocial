@@ -1,52 +1,66 @@
 {% load static %}
 <nav class="navbar-wrapper">
-    <div class="navbar">
-        <div class="container">
-            <div class="logo">
-                <!-- Link to Home Page -->
-                <a href="{% url 'home page' %}">
-                    <img width="50px" src="{% static 'images/sport-car-logo-icon.png' %}" alt="Car Logo">
-                </a>
-                <!-- Link to Home Page -->
-                <a class="home" href="{% url 'home page' %}">
-                    <i>ConnextoSocial</i>
-                </a>
-            </div>
-            <div class="nav-links">
-                <ul class="nav-group">
-                    {% if not request.user.is_authenticated %}
-                        <li class="nav-item"> <!-- Link to Login Page -->
-                            <a href="{% url 'login' %}">
-                                <i>Login</i>
-                            </a>
-                        </li>
-                        <li class="nav-item"> <!-- Link to Register Page -->
-                            <a href="{% url 'register' %}">
-                                <i>Register</i>
-                            </a>
-                        </li>
-                    {% else %}
-                        <li class="nav-item"> <!-- Link to Profile Page -->
-                            <a href="{% url 'profile-details' request.user.pk %}">
-                                <i>Profile</i>
-                            </a>
-                        </li>
-                        <li class="nav-item"> <!-- Logout Button -->
-                            <form method="post" action="{% url 'logout' %}">
-                                {% csrf_token %}
-                                <button class="add-btn logout-button" type="submit"><i>Logout</i></button>
-                            </form>
-                        </li>
-                    {% endif %}
-				
-                    <!-- Link to Add Photo Page -->
-                    <li class="nav-item">
-                        <a href="{% url 'photo-add' %}">
-                            <i>Create</i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+	<div class="navbar">
+		<div class="container">
+			<div class="logo">
+				<!-- Link to Home Page -->
+				<a href="{% url 'home page' %}">
+					<img width="50px" src="{% static 'images/sport-car-logo-icon.png' %}" alt="Car Logo">
+				</a>
+				<!-- Link to Home Page -->
+				<a class="home" href="{% url 'home page' %}">
+					<i>ConnextoSocial</i>
+				</a>
+			</div>
+			<div class="nav-links">
+				<ul class="nav-group">
+					{% if not request.user.is_authenticated %}
+						<li class="nav-item"> <!-- Link to Login Page -->
+							<a href="{% url 'login' %}">
+								<i>Login</i>
+							</a>
+						</li>
+						<li class="nav-item"> <!-- Link to Register Page -->
+							<a href="{% url 'register' %}">
+								<i>Register</i>
+							</a>
+						</li>
+					{% else %}
+						<li class="nav-item"> <!-- Link to Profile Page -->
+							<a href="{% url 'profile-details' request.user.pk %}">
+								<i>Profile</i>
+							</a>
+						</li>
+						<li class="nav-item"> <!-- Logout Button -->
+							<form method="post" action="{% url 'logout' %}">
+								{% csrf_token %}
+								<button class="add-btn logout-button" type="submit"><i>Logout</i></button>
+							</form>
+						</li>
+					{% endif %}
+
+					<!-- Link to Add Photo Page -->
+					<li class="nav-item">
+						<a href="{% url 'photo-add' %}">
+							<i>Create</i>
+						</a>
+					</li>
+
+					<!-- Link to Add Car Video -->
+					<li class="nav-item">
+						<a href="{% url 'video-add' %}">
+							<i>Upload Video Shorts</i>
+						</a>
+					</li>
+
+					<!-- Link to Video Shorts Homepage -->
+					<li class="nav-item">
+						<a href="{% url 'carvideos-homepage' %}">
+							<i>Video Shorts</i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </nav>

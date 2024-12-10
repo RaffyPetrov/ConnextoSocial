@@ -9,6 +9,7 @@ urlpatterns = [
     path('accounts/', include('ConnextoSocial.accounts.urls')),
     path('cars/', include('ConnextoSocial.cars.urls')),
     path('photos/', include('ConnextoSocial.carphotos.urls')),
+    path('carvideos/', include('ConnextoSocial.carvideos.urls')),
 
 
 ]

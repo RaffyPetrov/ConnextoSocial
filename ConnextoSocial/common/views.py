@@ -1,9 +1,10 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect, resolve_url
+from django.shortcuts import redirect, resolve_url, get_object_or_404
 from django.views.generic import ListView
 from pyperclip import copy
-from ConnextoSocial.common.forms import CommentForm, SearchForm
-from ConnextoSocial.common.models import Like
+from ConnextoSocial.carvideos.models import CarVideo
+from ConnextoSocial.common.forms import CommentForm, SearchForm, VideoCommentForm
+from ConnextoSocial.common.models import Like, VideoLike
 from ConnextoSocial.carphotos.models import CarPhoto
 
 
@@ -40,31 +41,37 @@ class HomePageView(ListView):
 
 
 @login_required
-def likes_functionality(request, photo_id: int):
-    liked_object = Like.objects.filter(
-        to_photo_id=photo_id,
-        user=request.user
-    ).first()
+def likes_functionality(request, photo_id: int = None, video_id: int = None):
+    if photo_id:
+        # Like for CarPhoto
+        car_photo = get_object_or_404(CarPhoto, pk=photo_id)
+        liked_object = Like.objects.filter(to_photo=car_photo, user=request.user).first()
 
-    if liked_object:
-        liked_object.delete()
-    else:
-        like = Like(to_photo_id=photo_id, user=request.user)
-        like.save()
+        if liked_object:
+            liked_object.delete()  # Remove the like
+        else:
+            Like.objects.create(to_photo=car_photo, user=request.user)  # Add the like
 
-    return redirect(request.META.get('HTTP_REFERER') + f'#{photo_id}')
+    elif video_id:
+        # Like for CarVideo
+        car_video = get_object_or_404(CarVideo, pk=video_id)
+        liked_object = VideoLike.objects.filter(to_video=car_video, user=request.user).first()
 
+        if liked_object:
+            liked_object.delete()  # Remove the like
+        else:
+            VideoLike.objects.create(to_video=car_video, user=request.user)  # Add the like
 
-def share_functionality(request, photo_id: int):
-    copy(request.META.get('HTTP_HOST') + resolve_url('photo-details', photo_id))
-
-    return redirect(request.META.get('HTTP_REFERER') + f'#{photo_id}')
+    return redirect(request.META.get('HTTP_REFERER') + f'#{photo_id or video_id}')
 
 
 @login_required
-def comment_functionality(request, photo_id: int):
+def comment_on_car_photo(request, photo_id: int):
+    """
+    Handles commenting functionality for car photos.
+    """
     if request.POST:
-        photo = CarPhoto.objects.get(pk=photo_id)
+        photo = get_object_or_404(CarPhoto, pk=photo_id)
         comment_form = CommentForm(request.POST)
 
         if comment_form.is_valid():
@@ -74,3 +81,33 @@ def comment_functionality(request, photo_id: int):
             comment.save()
 
         return redirect(request.META.get('HTTP_REFERER') + f'#{photo_id}')
+
+
+@login_required
+def comment_on_car_video(request, video_id: int):
+    """
+    Handles commenting functionality for car videos.
+    """
+    if request.POST:
+        video = get_object_or_404(CarVideo, pk=video_id)
+        comment_form = VideoCommentForm(request.POST)
+
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.to_video = video
+            comment.user = request.user
+            comment.save()
+
+        return redirect(request.META.get('HTTP_REFERER') + f'#{video_id}')
+
+
+def video_share_functionality(request, video_id: int):
+    copy(request.META.get('HTTP_HOST') + resolve_url('video-details', video_id))
+
+    return redirect(request.META.get('HTTP_REFERER') + f'#{video_id}')
+
+
+def photo_share_functionality(request, photo_id: int):
+    copy(request.META.get('HTTP_HOST') + resolve_url('photo-details', photo_id))
+
+    return redirect(request.META.get('HTTP_REFERER') + f'#{photo_id}')

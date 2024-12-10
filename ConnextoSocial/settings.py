@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'ConnextoSocial.carphotos.apps.CarphotosConfig',
     'ConnextoSocial.common.apps.CommonConfig',
     'ConnextoSocial.cars.apps.CarsConfig',
+    'ConnextoSocial.carvideos.apps.CarvideosConfig'
 
 ]
 
@@ -120,8 +121,9 @@ STATICFILES_DIRS = (
     BASE_DIR / 'static',
 )
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'mediafiles/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'mediafiles/car_photos'
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.AppUser'

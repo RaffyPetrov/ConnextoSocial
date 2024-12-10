@@ -23,7 +23,6 @@ class CarPhotoAddPage(LoginRequiredMixin, CreateView):
         return context
 
     def form_valid(self, form):
-        # Save the car form if provided
         car_form = CarAddForm(self.request.POST or None)
         car_instance = None
         if car_form.is_valid():
