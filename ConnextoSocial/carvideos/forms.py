@@ -14,14 +14,10 @@ class CarVideoAddForm(forms.ModelForm):
         fields = ['title', 'description', 'video', 'tagged_cars']
 
 
-class CarVideoEditForm(forms.ModelForm):
-    class Meta:
-        model = CarVideo
-        exclude = ['video']  # Exclude the video field for editing if necessary
+class CarVideoEditForm(CarVideoBaseForm):
+    class Meta(CarVideoBaseForm.Meta):
+        exclude = ('user', 'video')  # Prevent user and video from being editable
 
 
 class CarVideoDeleteForm(CarVideoBaseForm):
     pass
-
-
-

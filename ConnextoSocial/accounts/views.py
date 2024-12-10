@@ -51,6 +51,7 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
         context['total_likes_count'] = sum(photo.likes_count for photo in photos_with_likes)
         context['total_cars_count'] = self.object.cars_set.count()
         context['total_photos_count'] = self.object.carphoto_set.count()
+        context['total_videos_shorts'] = self.object.carvideo_set.count()  # Add this line
 
         return context
 

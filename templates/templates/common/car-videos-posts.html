@@ -1,149 +1,150 @@
 {% load static %}
 
 <div class="card">
-    <div class="top">
-        <!-- User Details and image location -->
-        <div class="userDetails">
-            {% if video.user and video.user.pk %}
-                <a href="{% url 'profile-details' video.user.pk %}">
-                    <div class="profilepic">
-                        <div class="profile_img">
-                            <div class="image">
-                                {% if video.user.profile and video.user.profile.profile_picture %}
-                                    <img src="{{ video.user.profile.profile_picture.url }}" alt="Profile Picture">
-                                {% else %}
-                                    <img src="{% static 'images/person.png' %}" alt="Default Profile Picture">
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            {% else %}
-                <p>User not available</p>
-            {% endif %}
+	<div class="top">
+		<!-- User Details and image location -->
+		<div class="userDetails">
+			{% if video.user and video.user.pk %}
+				<a href="{% url 'profile-details' video.user.pk %}">
+					<div class="profilepic">
+						<div class="profile_img">
+							<div class="image">
+								{% if video.user.profile and video.user.profile.profile_picture %}
+									<img src="{{ video.user.profile.profile_picture.url }}" alt="Profile Picture">
+								{% else %}
+									<img src="{% static 'images/person.png' %}" alt="Default Profile Picture">
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</a>
+			{% else %}
+				<p>User not available</p>
+			{% endif %}
 
-            <h3>
-                {% if video.user and video.user.pk %}
-                    <a href="{% url 'profile-details' video.user.pk %}"></a>
-                {% else %}
-                    <p>User not available</p>
-                {% endif %}
-                <span class="interactive">{{ video.user.profile.get_full_name }}</span>
-                <br>
-                {% if video.location %}
-                    <a href="https://www.google.com/maps?q={{ video.location }}" class="interactive" target="_blank">
-                        {{ video.location }}
-                    </a>
-                {% endif %}
+			<h3>
+				{% if video.user and video.user.pk %}
+					<a href="{% url 'profile-details' video.user.pk %}"></a>
+				{% else %}
+					<p>User not available</p>
+				{% endif %}
+				<span class="interactive">{{ video.user.profile.get_full_name }}</span>
+				<br>
+				{% if video.location %}
+					<a href="https://www.google.com/maps?q={{ video.location }}" class="interactive" target="_blank">
+						{{ video.location }}
+					</a>
+				{% endif %}
 
-                {% if video_page and request.user.pk == video.user.pk %}
-                    <div class="edit-delete-btns">
-                        <!-- Link to Edit Car Video Page -->
-                        <a href="{% url 'video-edit' video.pk %}">
-                            <img class="edit-img" src="{% static 'images/edit-icon.png' %}" alt="edit button">
-                        </a>
+				{% if request.user.pk == video.user.pk %}
+					<div class="edit-delete-btns">
+						<!-- Link to Edit Car Video Page -->
+						<a href="{% url 'video-edit' video.pk %}">
+							<img class="edit-img" src="{% static 'images/edit-icon.png' %}" alt="edit button">
+						</a>
 
-                        <!-- Link to Delete Car Video Page -->
-                        <a href="{% url 'video-delete' video.pk %}">
-                            <img class="bin-img" src="{% static '/images/icon-remove.png' %}" alt="bin button">
-                        </a>
-                    </div>
-                {% endif %}
-            </h3>
-        </div>
-    </div>
+						<!-- Link to Delete Car Video Page -->
+						<a href="{% url 'video-delete' video.pk %}">
+							<img class="bin-img" src="{% static '/images/icon-remove.png' %}" alt="delete button">
+						</a>
+					</div>
+				{% endif %}
+			</h3>
+		</div>
+	</div>
 
-    <!-- Post video -->
-    <div class="videoBx" id="{{ video.pk }}">
-        <video controls class="cover">
-            <source src="{{ video.car_video.url }}" type="video/mp4">
-            <source src="{{ video.car_video.url }}" type="video/webm">
-            <source src="{{ video.car_video.url }}" type="video/ogg">
-            <p>Your browser does not support HTML video. Please download the video <a href="{{ video.car_video.url }}">here</a>.</p>
-        </video>
-    </div>
+	<!-- Post video -->
+	<div class="videoBx" id="{{ video.pk }}">
+		<video controls class="cover">
+			<source src="{{ video.car_video.url }}" type="video/mp4">
+			<source src="{{ video.car_video.url }}" type="video/webm">
+			<source src="{{ video.car_video.url }}" type="video/ogg">
+			<p>Your browser does not support HTML video. Please download the video <a href="{{ video.car_video.url }}">here</a>.
+			</p>
+		</video>
+	</div>
 
-    <div class="bottom">
-        <p class="car-details">{{ video.description }}</p>
-        <div class="actionBtns">
-            <div class="left">
-                <!-- Like Button Form -->
-                <form method="POST" action="{% url 'carvideos-like' video.pk %}">
-                    {% csrf_token %}
-                    <button type="submit" class="heart-btn {% if video.has_liked %}liked{% endif %}">
-                        <span class="heart-icon">&hearts;</span>
-                        <span class="like-text">{% if video.has_liked %} {{ video.like_set.count }} likes{% else %}
-                            Like{% endif %}</span>
-                    </button>
-                </form>
+	<div class="bottom">
+		<p class="car-details">{{ video.description }}</p>
+		<div class="actionBtns">
+			<div class="left">
+				<!-- Like Button Form -->
+				<form method="POST" action="{% url 'carvideos-like' video.pk %}">
+					{% csrf_token %}
+					<button type="submit" class="heart-btn {% if video.has_liked %}liked{% endif %}">
+						<span class="heart-icon">&hearts;</span>
+						<span class="like-text">{% if video.has_liked %} {{ video.videolike_set.count }} likes{% else %}
+							Like{% endif %}</span>
+					</button>
+				</form>
 
-                <!-- Share Button -->
-                <form method="POST" action="{% url 'video-share' video.pk %}">
-                    {% csrf_token %}
-                    <button type="submit" class="share-btn">
-                        <img src="{% static 'images/share-icon.png' %}" alt="Share" class="share-icon">
-                        Share
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
+				<!-- Share Button -->
+				<form method="POST" action="{% url 'video-share' video.pk %}">
+					{% csrf_token %}
+					<button type="submit" class="share-btn">
+						<img src="{% static 'images/share-icon.png' %}" alt="Share" class="share-icon">
+						Share
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
 
-    {% for car in video.tagged_cars.all %}
-        <a href="{% url 'car-details' video.user.profile.get_full_name car.slug %}">
-            <p class="message">
-                <b>{{ car.name }}</b>
-            </p>
-        </a>
-    {% endfor %}
+	{% for car in video.tagged_cars.all %}
+		<a href="{% url 'car-details' video.user.profile.get_full_name car.slug %}">
+			<p class="message">
+				<b>{{ car.name }}</b>
+			</p>
+		</a>
+	{% endfor %}
 
-    <div class="comments-section">
-        <h3>Comments</h3>
-        {% for comment in comments %}
-            <div class="comment">
-                <div class="userDetails">
-                    <div class="comment-data">
-                        <div class="profilepic">
-                            <div class="profile_img">
-                                <div class="image">
-                                    {% if comment.user.profile and comment.user.profile.profile_picture %}
-                                        <img src="{{ comment.user.profile.profile_picture.url }}"
-                                             alt="User Profile Picture">
-                                    {% else %}
-                                        <img src="{% static 'images/person.png' %}" alt="Default Profile Picture">
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                        <p>
-                            <a href="{% url 'profile-details' comment.user.pk %}">{{ comment.user.profile.get_full_name }}</a>
-                            {{ comment.text }}
-                        </p>
-                    </div>
-                    <span>{{ comment.date_time_of_publication }}</span>
-                </div>
-            </div>
-        {% empty %}
-            <p>No comments yet. Be the first to comment!</p>
-        {% endfor %}
+	<div class="comments-section">
+		<h3>Comments</h3>
+		{% for comment in comments %}
+			<div class="comment">
+				<div class="userDetails">
+					<div class="comment-data">
+						<div class="profilepic">
+							<div class="profile_img">
+								<div class="image">
+									{% if comment.user.profile and comment.user.profile.profile_picture %}
+										<img src="{{ comment.user.profile.profile_picture.url }}"
+											 alt="User Profile Picture">
+									{% else %}
+										<img src="{% static 'images/person.png' %}" alt="Default Profile Picture">
+									{% endif %}
+								</div>
+							</div>
+						</div>
+						<p>
+							<a href="{% url 'profile-details' comment.user.pk %}">{{ comment.user.profile.get_full_name }}</a>
+							{{ comment.text }}
+						</p>
+					</div>
+					<span>{{ comment.date_time_of_publication }}</span>
+				</div>
+			</div>
+		{% empty %}
+			<p>No comments yet. Be the first to comment!</p>
+		{% endfor %}
 
-        <!-- Comment Form -->
-        <div class="addComments">
-            {% if video.pk %}
-                <form method="post" action="{% url 'comment_on_car_video' video.pk %}">
-                    {% csrf_token %}
-                    {{ comment_form.as_p }}
-                    <button type="submit">Post</button>
-                </form>
-            {% else %}
-                <p>Unable to add comments for this video.</p>
-            {% endif %}
-        </div>
-    </div>
+		<!-- Comment Form -->
+		<div class="addComments">
+			{% if video.pk %}
+				<form method="post" action="{% url 'comment_on_car_video' video.pk %}">
+					{% csrf_token %}
+					{{ comment_form.as_p }}
+					<button type="submit">Post</button>
+				</form>
+			{% else %}
+				<p>Unable to add comments for this video.</p>
+			{% endif %}
+		</div>
+	</div>
 
-    <h3 class="postTime">{{ video.date_of_publication }}</h3>
-    <!-- Link to Video Details Page -->
-    <a href="{% url 'video-details' video.pk %}" class="see-details-btn">
-        <h4 class="details">See details</h4>
-    </a>
+	<h3 class="postTime">{{ video.date_of_publication }}</h3>
+	<!-- Link to Video Details Page -->
+	<a href="{% url 'video-details' video.pk %}" class="see-details-btn">
+		<h4 class="details">See details</h4>
+	</a>
 </div>

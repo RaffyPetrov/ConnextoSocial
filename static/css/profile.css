@@ -107,7 +107,6 @@
     opacity: 0.8;
 }
 
-
 /* Personal Information Edit Section */
 .personal .edit {
     flex-grow: 1;
@@ -192,8 +191,6 @@
     cursor: pointer; /* Pointer cursor for interactivity */
 }
 
-
-
 /* Names Section */
 .names {
     margin-bottom: 10px;
@@ -250,17 +247,24 @@
     border-radius: 50%;
 }
 
-/* Car Photo Item */
-.post-photos {
+/* Car Photo and Video Layout */
+.posts {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center; /* Center the posts container */
     margin-top: 20px;
 }
 
-.photo-item {
-    width: 30%; /* Adjust the width for smaller posts */
+.post-photos, .video-posts {
+    width: 48%; /* Both photos and videos have the same width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the items inside */
+    gap: 20px;
+}
+
+.photo-item, .video-item {
+    width: 100%; /* Full width for each item */
     border-radius: 8px;
     overflow: hidden;
     background-color: #fff;
@@ -268,39 +272,42 @@
     transition: transform 0.3s ease;
 }
 
-.photo-item img {
+.photo-item img, .video-item video {
     width: 100%;
     height: auto;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.photo-item:hover {
+.photo-item:hover, .video-item:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.photo-info {
+.photo-info, .video-info {
     padding: 10px;
     font-size: 14px;
 }
 
-.photo-info p {
-    margin: 0;
+.video-item video {
+    width: 100%;
+    height: auto;
 }
 
-.location {
-    color: #777;
-    font-size: 12px;
+.video-item h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-/* Responsive Design for Car Posts */
+/* Responsive Design for Car Posts and Videos */
 @media (max-width: 768px) {
-    .photo-item {
-        width: 45%; /* Increase width for mobile view */
+    .posts {
+        flex-direction: column; /* Stack the posts vertically on smaller screens */
     }
 
-    .photo-info {
-        font-size: 12px;
+    .post-photos, .video-posts {
+        width: 100%; /* Full width on mobile */
+        margin-right: 0; /* Remove space between sections */
     }
 }
