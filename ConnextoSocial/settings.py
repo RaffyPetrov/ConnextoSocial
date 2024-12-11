@@ -15,11 +15,10 @@ SECRET_KEY = os.getenv('SECRET_KEY', config('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', config('DEBUG')) == "True"
 
-# Update ALLOWED_HOSTS to include localhost and 127.0.0.1 by default
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', config('ALLOWED_HOSTS', default='localhost,127.0.0.1')).split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', config('ALLOWED_HOSTS')).split(',')
 
-# CSRF_TRUSTED_ORIGINS should handle an empty list correctly
-CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', config('CSRF_TRUSTED_ORIGINS', default='')).split(',')
+
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', config('CSRF_TRUSTED_ORIGINS', [])).split(',')
 
 # Application definition
 INSTALLED_APPS = [
@@ -67,17 +66,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ConnextoSocial.wsgi.application'
 
-# Database configuration
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": os.getenv('DB_NAME', config('DB_NAME')),
         "USER": os.getenv('DB_USER', config('DB_USER')),
         "PASSWORD": os.getenv('DB_PASS', config('DB_PASS')),
-        "HOST": os.getenv('DB_HOST', config('DB_HOST')),
-        "PORT": os.getenv('DB_PORT', config('DB_PORT')),
+        "HOST": os.getenv('DB_HOST', config('DB_HOST')),  # Update this to your cloud DB host
+        "PORT": os.getenv('DB_PORT', config('DB_PORT', 5432)),
     }
 }
+
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
