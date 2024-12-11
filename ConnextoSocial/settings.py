@@ -1,5 +1,6 @@
+import os
 from pathlib import Path
-
+from decouple import config
 from django.urls import reverse_lazy
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -10,12 +11,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-18t8n-%06@2456i%$nn%1)@kuf74o2gmr9+s$$g3=h*=@v)y7#'
+SECRET_KEY = os.getenv('SECRET_KEY', config('SECRET_KEY'))
+# django-insecure-5hfl3*4yfz^8uqg&mj9w6t@hz14ef9rt4i3chuo2z76vd+52o^
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', config('DEBUG')) == "True"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', config('ALLOWED_HOSTS')).split(',')
 
 
 # Application definition
@@ -72,14 +74,13 @@ WSGI_APPLICATION = 'ConnextoSocial.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "connextosocial",
-        "USER": "postgres",
-        "PASSWORD": "SPn6C01w'*9/",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "NAME": os.getenv('DB_NAME', config('DB_NAME')),
+        "USER": os.getenv('DB_USER', config('DB_USER')),
+        "PASSWORD": os.getenv('DB_PASS', config('DB_PASS')),
+        "HOST": os.getenv('DB_HOST', config('DB_HOST')),
+        "PORT": os.getenv('DB_PORT', config('DB_PORT')),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
