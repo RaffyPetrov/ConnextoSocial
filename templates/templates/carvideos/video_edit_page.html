@@ -3,14 +3,14 @@
 {% block content %}
     <!-- Starts Edit Video Section -->
     <div class="edit-delete edit-video">
-        <h2>Edit Video</h2>
+        <h2>Edit Video Post</h2>
 
         <!-- Starts Edit Video Form -->
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form }}
             <!-- Edit Video Button -->
-            <button class="edit-btn" type="submit">Update Video</button>
+            <button class="edit-btn" type="submit">Update Video Post</button>
         </form>
         <!-- End Edit Video Form -->
 

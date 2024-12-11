@@ -1,11 +1,137 @@
 {% extends 'templates/common/base.html' %}
+{% load static %}
 
 {% block content %}
-    
-    <div class="container">
-        <div class="col-9">
-            {% include 'templates/common/car-videos-posts.html' with photo_page=True %}
-        </div>
-    </div>
+	<!-- Start Container with New Background Color -->
+	<div class="carvideo-container">
+		<div class="col-9 videos-container"> <!-- Add custom class 'videos-container' -->
 
+			<!-- Video Details Card -->
+			<div class="video-container">
+				<div class="card">
+					<div class="top">
+						<!-- User Details and image location -->
+						<div class="userDetails">
+							{% if video.user and video.user.pk %}
+								<a href="{% url 'profile-details' video.user.pk %}">
+									<div class="profilepic">
+										<div class="profile_img">
+											<div class="image">
+												{% if video.user.profile and video.user.profile.profile_picture %}
+													<img src="{{ video.user.profile.profile_picture.url }}"
+														 alt="Profile Picture">
+												{% else %}
+													<img src="{% static 'images/person.png' %}"
+														 alt="Default Profile Picture">
+												{% endif %}
+											</div>
+										</div>
+									</div>
+								</a>
+							{% else %}
+								<p>User not available</p>
+							{% endif %}
+
+							<h3>
+								{% if video.user and video.user.pk %}
+									<a href="{% url 'profile-details' video.user.pk %}">
+										<span class="interactive">{{ video.user.profile.get_full_name }}</span>
+									</a>
+								{% else %}
+									<p>User not available</p>
+								{% endif %}
+								<br>
+								{% if video.location %}
+									<a href="https://www.google.com/maps?q={{ video.location }}" class="interactive"
+									   target="_blank">
+										{{ video.location }}
+									</a>
+								{% endif %}
+							</h3>
+						</div>
+					</div>
+
+					<!-- Video Player Section -->
+					<div class="videoBx">
+						<video controls class="video-player">
+							<source src="{{ video.video.url }}" type="video/mp4">
+							<source src="{{ video.video.url }}" type="video/webm">
+							<source src="{{ video.video.url }}" type="video/ogg">
+							Your browser does not support HTML5 video.
+						</video>
+						<p class="car-details">{{ video.description }}</p>
+					</div>
+
+					<!-- Like and Share Buttons -->
+					<div class="bottom">
+						<div class="actionBtns">
+							<div class="left">
+								<!-- Like Button Form -->
+								<form method="POST" action="{% url 'carvideos-like' video.pk %}">
+									{% csrf_token %}
+									<button type="submit" class="heart-btn {% if video.has_liked %}liked{% endif %}">
+										<span class="heart-icon">&hearts;</span>
+										<span class="like-text">
+                                        {% if video.has_liked %} {{ video.videolike_set.count }} likes{% else %}
+											Like {% endif %}
+                                    </span>
+									</button>
+								</form>
+
+								<!-- Share Button -->
+								<form method="POST" action="{% url 'video-share' video.pk %}">
+									{% csrf_token %}
+									<button type="submit" class="share-btn">
+										<img src="{% static 'images/share-icon.png' %}" alt="Share" class="share-icon">
+										Share
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<!-- Comments Section -->
+					<div class="addComments">
+						{% for comment in video.videocomment_set.all %}
+							<div class="comments">
+								<div class="top">
+									<div class="userDetails">
+										<div class="comment-data">
+											<div class="profilepic">
+												<div class="profile_img">
+													<div class="image">
+														{% if comment.user.profile and comment.user.profile.profile_picture %}
+															<img src="{{ comment.user.profile.profile_picture.url }}"
+																 alt="User Profile Picture">
+														{% else %}
+															<img src="{% static 'images/person.png' %}"
+																 alt="Default Profile Picture">
+														{% endif %}
+													</div>
+												</div>
+											</div>
+											<p>
+												<a href="{% url 'profile-details' comment.user.pk %}">
+													{{ comment.user.profile.get_full_name }}
+												</a>
+												{{ comment.text }}
+											</p>
+										</div>
+										<span>{{ comment.date_time_of_publication }}</span>
+									</div>
+								</div>
+							</div>
+						{% empty %}
+							<p>No comments yet. Be the first to comment!</p>
+						{% endfor %}
+						<form method="post" action="{% url 'comment_on_car_video' video.pk %}">
+							{% csrf_token %}
+							{{ comment_form.as_p }}
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}

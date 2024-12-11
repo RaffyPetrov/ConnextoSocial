@@ -1,31 +1,21 @@
 {% extends 'templates/common/base.html' %}
-{% block content %}
 
-    <!-- Start Edit Profile Section -->
-    <div class="edit-delete">
+{% block content %}
+    <!-- Starts Edit Profile Section -->
+    <div class="edit-delete edit-profile">
         <h2>Edit Profile</h2>
 
-        <!-- Start Edit Profile Form -->
-        <form method="post" enctype="multipart/form-data">  <!-- Add enctype here for file uploads -->
+        <!-- Starts Edit Profile Form -->
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-
-            {% for field in form %}
-
-                <p class="error"> {{ field.errors }} </p>
-                <div class="label-input">
-                    <label>{{ field.label }}</label>
-                    {{ field }}  <!-- Field rendering -->
-                </div>
-                <br>
-
-            {% endfor %}
+            {{ form }}  <!-- Render the form fields here -->
 
             <!-- Edit Profile Button -->
-            <button class="edit-btn" type="submit">Edit</button>
-
+            <button class="edit-btn" type="submit">Edit Profile</button>
         </form>
         <!-- End Edit Profile Form -->
 
     </div>
     <!-- End Edit Profile Section -->
+
 {% endblock %}

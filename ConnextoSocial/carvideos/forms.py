@@ -16,7 +16,7 @@ class CarVideoAddForm(forms.ModelForm):
 
 class CarVideoEditForm(CarVideoBaseForm):
     class Meta(CarVideoBaseForm.Meta):
-        exclude = ('user', 'video')  # Prevent user and video from being editable
+        exclude = ('user', 'video', 'tagged_cars')  # Prevent user and video from being editable
 
 
 class CarVideoDeleteForm(CarVideoBaseForm):

@@ -263,8 +263,8 @@
     gap: 20px;
 }
 
-.photo-item, .video-item {
-    width: 100%; /* Full width for each item */
+.photo-item {
+    width: 70%; /* Full width for each item */
     border-radius: 8px;
     overflow: hidden;
     background-color: #fff;
@@ -279,12 +279,12 @@
     transition: transform 0.3s ease;
 }
 
-.photo-item:hover, .video-item:hover {
+.photo-item:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.photo-info, .video-info {
+.photo-info {
     padding: 10px;
     font-size: 14px;
 }

@@ -58,7 +58,6 @@
 
 		<!-- Start Posts Section -->
 		<div class="posts">
-			<h2>Latest Car Posts of {{ object.profile.get_full_name }}</h2>
 			<div class="post-photos">
 				{% for photo in object.carphoto_set.all %}
 					<a href="{% url 'photo-details' photo.pk %}">
@@ -75,8 +74,6 @@
 							</div>
 						</div>
 					</a>
-				{% empty %}
-					<p>{{ object.profile.get_full_name }} hasn't uploaded any car photos yet.</p>
 				{% endfor %}
 			</div>
 		</div>
@@ -84,7 +81,6 @@
 
 		<!-- Start Video Posts Section -->
 		<div class="videos">
-			<h2>Latest Car Videos of {{ object.profile.get_full_name }}</h2>
 			<div class="video-posts">
 				{% for video in object.carvideo_set.all %}
 					<div class="video-item">
@@ -107,8 +103,6 @@
 							{% endif %}
 						</div>
 					</div>
-				{% empty %}
-					<p>{{ object.profile.get_full_name }} hasn't uploaded any car videos yet.</p>
 				{% endfor %}
 			</div>
 		</div>

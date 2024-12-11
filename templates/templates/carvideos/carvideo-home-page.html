@@ -9,16 +9,16 @@
 
             <!-- Start Searchbar Form with Interaction -->
             <form class="searchbar" action="" method="get" novalidate>
-                {{ search_form }}
+                {{ search_form.as_p }}
                 <button type="submit" class="search-btn">
-                    <img src="{% static '/images/search-icon.png' %}" height="20" alt="search-icon">
+                    <img src="{% static 'images/search-icon.png' %}" height="20" alt="search-icon">
                 </button>
             </form>
             <!-- End Searchbar Form -->
 
             <!-- Loop through the car video posts -->
-            <div class="car-videos">
-                {% for video in page_obj %}
+            <div class="video-container">
+                {% for video in all_videos %}
                     {% include 'templates/common/car-videos-posts.html' %}
                 {% empty %}
                     <p>No videos found.</p>
@@ -32,21 +32,13 @@
                     Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
                 </span>
                 <span class="step-links-buttons">
-                    {% if page_obj.has_previous and page_obj.has_next %}
+                    {% if page_obj.has_previous %}
                         <a href="?{% url_query_append_tag request 'page' page_obj.previous_page_number %}"
                            class="pagination-link">
                             <i class="fa-solid fa-arrow-left"></i>
                         </a>
-                        <a href="?{% url_query_append_tag request 'page' page_obj.next_page_number %}"
-                           class="pagination-link">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    {% elif page_obj.has_previous %}
-                        <a href="?{% url_query_append_tag request 'page' page_obj.previous_page_number %}"
-                           class="pagination-link">
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </a>
-                    {% elif page_obj.has_next %}
+                    {% endif %}
+                    {% if page_obj.has_next %}
                         <a href="?{% url_query_append_tag request 'page' page_obj.next_page_number %}"
                            class="pagination-link">
                             <i class="fa-solid fa-arrow-right"></i>

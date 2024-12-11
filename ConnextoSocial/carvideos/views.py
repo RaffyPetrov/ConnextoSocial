@@ -14,7 +14,7 @@ class CarVideosHomePageView(ListView):
     model = CarVideo
     template_name = 'templates/carvideos/carvideo-home-page.html'
     context_object_name = 'all_videos'
-    paginate_by = 6
+    paginate_by = 2
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -24,20 +24,26 @@ class CarVideosHomePageView(ListView):
 
         user = self.request.user
 
+        # If the request is for a specific user's profile, get their videos
+        if 'user_pk' in self.kwargs:
+            context['all_videos'] = CarVideo.objects.filter(user__pk=self.kwargs['user_pk']).order_by('-uploaded_at')
+
+        # Check if the current user has liked the videos
         for video in context['all_videos']:
             video.has_liked = video.videolike_set.filter(user=user).exists() if user.is_authenticated else False
 
         return context
 
     def get_queryset(self):
-        # Fetch latest car videos, ordered by the uploaded_at field
-        queryset = CarVideo.objects.all().order_by('-uploaded_at')  # Most recent first
+        # Fetch all car videos ordered by the most recent `uploaded_at`
+        queryset = CarVideo.objects.all().order_by('-uploaded_at')
 
-        title = self.request.GET.get('title')
+        # Get the search parameter from the request
+        car_name = self.request.GET.get('car_name')
 
-        if title:
+        if car_name:
             queryset = queryset.filter(  # Filter the objects
-                tagged_cars__title__icontains=title
+                tagged_cars__car_name__icontains=car_name
             )
         return queryset  # return the new queryset
 
@@ -108,7 +114,7 @@ def video_delete(request, pk: int):
 class VideoDetailView(LoginRequiredMixin, DetailView):
     model = CarVideo
     template_name = 'templates/carvideos/video_details.html'  # Corrected template path
-    # context_object_name = 'video'
+    context_object_name = 'video'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
