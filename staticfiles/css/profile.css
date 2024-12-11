@@ -1,0 +1,313 @@
+.profile {
+    margin: 50px auto;
+    width: 90%;
+    background-color: #8f9bf8;
+    padding: 10px;
+    border-radius: 17px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile:hover {
+    transform: scale(1.02);
+}
+
+/* Profile Data Layout */
+.profile-data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Profile Image Styling */
+.profile_img img {
+    width: 120px; /* Reduced size for the profile image */
+    height: 120px; /* Keep it square */
+    margin-top: 10px;
+    border-radius: 50%; /* Make the image round */
+    object-fit: cover; /* Ensure the image covers the area */
+    margin-right: 20px; /* Space between the image and the next content */
+}
+
+.profile_img img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Link Styling */
+.profile a {
+    color: red;
+}
+
+.profile a:hover {
+    color: #007bff;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Section */
+.profile .footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+/* Edit Button */
+.edit-img {
+    width: 20px;  /* Reduced size for the edit icon */
+    height: 20px; /* Keep the height proportional */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.edit-img:hover {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+/* Delete Button */
+.bin-img {
+    width: 20px;  /* Reduced size for the delete icon */
+    height: 20px; /* Keep the height proportional */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.bin-img:hover {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+/* Delete Button Styling */
+.delete {
+    display: block;
+    margin-top: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #dc3545;
+    transition: color 0.3s ease;
+}
+
+.delete:hover {
+    color: #a71d2a;
+}
+
+/* No Posts Section */
+.no-posts-holder {
+    display: flex;
+    justify-content: center;
+}
+
+.no-posts {
+    width: 75%;
+    height: auto;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    opacity: 0.8;
+}
+
+/* Personal Information Edit Section */
+.personal .edit {
+    flex-grow: 1;
+    margin-left: 20px;
+    transition: all 0.3s ease; /* Smooth transition for the edit section */
+}
+
+/* Title for the editable section */
+.personal .edit p {
+    font-size: 28px; /* Larger font size for section titles */
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    color: #333; /* Dark color for better readability */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Hover effect for the editable section title */
+.personal .edit p:hover {
+    color: orange; /* Change color to orange on hover */
+    cursor: pointer; /* Pointer cursor for interactivity */
+}
+
+/* Edit icon hover effect */
+.personal .edit img {
+    width: 30px; /* Larger icon size for visibility */
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover effect for the edit icon */
+.personal .edit img:hover {
+    transform: scale(1.2); /* Enlarge the icon */
+    opacity: 0.8; /* Slightly fade the icon on hover */
+}
+
+/* Personal Data Styling */
+.personal .data {
+    display: flex;
+    justify-content: space-between;
+    font-size: 34px; /* Larger font size for data */
+    margin-top: 20px;
+    transition: all 0.3s ease; /* Smooth transition for the entire data section */
+}
+
+/* Hover effect for the personal data section */
+.personal .data:hover {
+    background-color: #f9f9f9; /* Light background color on hover for emphasis */
+    padding: 10px; /* Adds padding to make the hover area larger */
+    border-radius: 8px; /* Round the corners of the hover effect */
+}
+
+/* Styling for the labels (span elements) */
+.personal .data span {
+    font-weight: bold;
+    color: #333; /* Default label color */
+    text-transform: capitalize;
+    transition: color 0.3s ease; /* Smooth color change */
+}
+
+/* Hover effect for the labels */
+.personal .data span:hover {
+    color: orange; /* Change label color to orange on hover */
+    cursor: pointer; /* Pointer cursor for interactivity */
+}
+
+/* Styling for the personal data (p elements) */
+.personal .data p {
+    margin-right: 30px;
+    margin-top: 1px;
+    font-size: 32px; /* Larger font size for personal data */
+    color: #555; /* Slightly lighter color for data */
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scaling */
+}
+
+/* Hover effect for personal data */
+.personal .data p:hover {
+    color: orange; /* Change color to orange on hover */
+    transform: scale(1.2); /* Enlarge the data text */
+    cursor: pointer; /* Pointer cursor for interactivity */
+}
+
+/* Names Section */
+.names {
+    margin-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif;
+    font-size: 22px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+/* Email Section */
+.email {
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+}
+
+/* Car Status Section */
+.statuses {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    overflow-x: auto;
+}
+
+.statuses .status {
+    display: inline-block;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Vibrant gradient */
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.statuses .status:hover {
+    transform: scale(1.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.statuses .status .image {
+    width: 120px; /* Set a fixed smaller width */
+    height: 120px; /* Set a fixed smaller height */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 50%; /* If you want a circular image */
+}
+
+.statuses .status img {
+    width: 50%; /* Reduced size to 50% to make it smaller */
+    height: 50%; /* Reduced height to match the width */
+    object-fit: cover; /* Ensure image maintains aspect ratio */
+    border-radius: 50%;
+}
+
+/* Car Photo and Video Layout */
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the posts container */
+    margin-top: 20px;
+}
+
+.post-photos, .video-posts {
+    width: 48%; /* Both photos and videos have the same width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the items inside */
+    gap: 20px;
+}
+
+.photo-item {
+    width: 70%; /* Full width for each item */
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.photo-item img, .video-item video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.photo-info {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.video-item video {
+    width: 100%;
+    height: auto;
+}
+
+.video-item h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design for Car Posts and Videos */
+@media (max-width: 768px) {
+    .posts {
+        flex-direction: column; /* Stack the posts vertically on smaller screens */
+    }
+
+    .post-photos, .video-posts {
+        width: 100%; /* Full width on mobile */
+        margin-right: 0; /* Remove space between sections */
+    }
+}

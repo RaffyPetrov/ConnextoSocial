@@ -1,0 +1,357 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container for Car Functions Form */
+.car-functions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    padding: 40px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 60vh;
+    width: 100%;
+    max-width: 450px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect on container */
+.car-functions:hover {
+    transform: scale(1.02);
+}
+
+/* Title Styling */
+.car-functions h2 {
+    text-align: center;
+    margin-top: -10px;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    color: #333;
+}
+
+/* Hide labels */
+.car-functions label {
+    display: none;
+}
+
+/* Input and Select Styles */
+.car-functions input,
+.car-functions select,
+.car-functions textarea {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 40px;
+    padding-left: 15px;
+    margin-top: 15px;
+    font-size: 14px;
+    transition: border 0.3s ease;
+    color: #333;
+}
+
+/* Input focus effect */
+.car-functions input:focus,
+.car-functions select:focus,
+.car-functions textarea:focus {
+    border-color: #0057d1;
+    outline: none;
+}
+
+/* Button Styles */
+.car-functions button {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button hover effect */
+.car-functions button:hover {
+    background-color: #004c99;
+    transform: translateY(-2px);
+}
+
+
+
+/* Specific button styles */
+.delete-btn {
+    background-color: #ff4d4d; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #e04343; /* Darker red */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 12px rgba(255, 77, 77, 0.5); /* Red shadow */
+}
+
+.edit-btn {
+    background-color: #0066cc; /* Blue color */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #005bb5; /* Darker blue */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.5); /* Blue shadow */
+}
+
+.add-btn {
+    background-color: #ff9a00; /* Dark orange color */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #e87b00; /* Darker orange */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 12px rgba(255, 154, 0, 0.5); /* Orange shadow */
+}
+
+
+
+
+
+/* Textarea Styles */
+.car-functions textarea {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding-left: 15px;
+    height: 120px;
+    width: 100%;
+    margin-top: 15px;
+    resize: none;
+}
+
+/* Links inside forms */
+.car-functions a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.car-functions a:hover {
+    color: #004c99;
+}
+
+/* Section for image editing (photo edit section) */
+.car-photo label {
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.car-photo input {
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+}
+
+.car-photo p {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .car-functions {
+        padding: 25px;
+        width: 90%;
+        height: auto;
+    }
+
+    .car-functions h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .car-functions {
+        padding: 15px;
+    }
+
+    .car-functions h2 {
+        font-size: 18px;
+    }
+
+    .car-functions input,
+    .car-functions select,
+    .car-functions textarea,
+    .car-functions button {
+        font-size: 12px;
+    }
+}
+
+/* Updated for Add Car and Photo Page */
+.container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;   /* Center items horizontally */
+    justify-content: center; /* Center items vertically if needed */
+    gap: 16px; /* Add spacing between items */
+}
+
+.form-container {
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+input[type="text"], input[type="file"], textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+
+/* Container for both forms */
+.edit-delete-container {
+    display: flex;                  /* Makes the container a flex container */
+    justify-content: space-between; /* Spaces out the sections horizontally */
+    gap: 20px;                      /* Adds space between the sections */
+    padding: 20px;
+}
+
+/* Each section (Add Car and Upload Photo) */
+.edit-delete-section {
+    flex: 1;                      /* Makes each section take equal width */
+    padding: 20px;                 /* Adds padding inside each section */
+    background-color: #f9f9f9;    /* Light background for sections */
+    border-radius: 8px;           /* Rounded corners for each section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow */
+    box-sizing: border-box;       /* Ensures padding doesn't affect width */
+}
+
+/* Title styles for each section */
+.edit-delete-section h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center; /* Centers the title horizontally */
+}
+
+
+/* Optional: If you want the forms to have some spacing between their fields */
+.edit-delete-section form p {
+    margin-bottom: 15px;
+}
+
+
+.add-btn {
+    background-color: #FF7800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 65%; /* Makes the button stretch across the form */
+}
+
+.add-btn:hover {
+    background-color: #e96b00;
+    transform: scale(1.05);
+}
+
+.add-btn:active {
+    background-color: #e16b00;
+    transform: scale(1);
+}
+
+.divider {
+    margin: 30px 0;
+    border: 0;
+    border-top: 2px solid #eee;
+}
+
+textarea {
+    min-height: 50px;
+    resize: vertical;
+}
+
+.form-group input,
+.form-group textarea {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    .form-container {
+        text-align: center;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+    }
+}

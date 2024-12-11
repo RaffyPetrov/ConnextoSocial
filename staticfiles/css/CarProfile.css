@@ -1,0 +1,121 @@
+.interactive {
+    color: #ff7800;           /* Default color (orange) */
+    font-size: 30px;           /* Font size */
+    transition: color 0.3s ease; /* Smooth transition effect */
+}
+
+.interactive:hover {
+    color: #ff6600;           /* Darker orange color on hover */
+}
+
+
+
+/* Car Profile */
+.car-profile {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.car-profile .profile-data {
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.car-profile .footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+/* Car Posts */
+.car-posts {
+    display: block; /* Stack posts one under the other */
+    padding: 20px; /* Optional: adds padding around the container */
+}
+
+.car-posts .card {
+    margin-top: 10px;
+    width: 100%; /* Ensure the cards take full width */
+    display: block; /* Ensure the cards are block elements */
+    border: 1px solid rgba(7, 7, 7, 0.24);
+    border-radius: 10px; /* Optional: rounded corners for a smoother look */
+    background: #000;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.car-posts .card:hover {
+    transform: translateY(-5px); /* Elevate on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.car-posts .card .top {
+    background-color: #ffef01;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.car-posts .card .bottom {
+    padding: 10px 20px;
+}
+
+.car-posts .card .top .userDetails {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.car-posts .card .top .userDetails img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.car-posts h3 {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.4em;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .car-profile {
+        padding: 15px;
+    }
+
+    .car-profile .profile-data {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .car-posts .card {
+        width: 100%; /* Ensure each card takes full width */
+    }
+
+    .car-posts h3 {
+        font-size: 16px; /* Adjust title size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .car-posts .card {
+        width: 100%; /* Ensure each card takes full width on smaller screens */
+    }
+
+    .car-posts h3 {
+        font-size: 14px; /* Adjust title size for smaller screens */
+    }
+
+    .car-profile .profile-data {
+        gap: 20px;
+    }
+}

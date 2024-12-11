@@ -1,0 +1,144 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login/Register Container */
+.login-register-div {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 5%;
+}
+
+/* Main Box */
+.login-register-box, .second-option {
+    display: block;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+/* Header Styling */
+.login-register-box h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Label Styling */
+.login-register-box label {
+    display: none;
+}
+
+/* Input Fields Styling */
+.login-register-box input {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 40px;
+    width: 100%;
+    padding-left: 15px;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+.login-register-box input:focus {
+    border-color: #0066cc;
+    outline: none;
+}
+
+/* Button Styling */
+.login-register-box button.login-btn { /* Added .login-btn class */
+    background-color: #ff6a00; /* Updated to the requested color */
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: 100%;
+    height: 45px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-register-box button.login-btn:hover {
+    background-color: #e65c00; /* Slightly darker shade for hover effect */
+}
+
+/* Second Option Text */
+.second-option {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.second-option a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.second-option a:hover {
+    color: #004c99;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-register-div {
+        margin-top: 10%;
+        padding: 15px;
+    }
+
+    .login-register-box {
+        padding: 30px;
+    }
+
+    .login-register-box h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .login-register-div {
+        margin-top: 15%;
+    }
+}
+
+/* Button Styling */
+.login-register-box button.login-btn { /* Added .login-btn class */
+    background-color: #ff6a00; /* Updated to the requested color */
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: 100%;
+    height: 45px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-register-box button.login-btn:hover {
+    background-color: #e65c00; /* Slightly darker shade for hover effect */
+}

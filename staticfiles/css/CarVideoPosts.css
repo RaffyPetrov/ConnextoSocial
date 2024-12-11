@@ -1,0 +1,137 @@
+/* Video Container Styling */
+.video-container {
+    margin: 50px auto;
+    width: 90%;
+    background-color: #1f1f1f; /* Dark background for a sleek, modern look */
+    padding: 20px;
+    border-radius: 17px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+/* Hover Effect for Video Container */
+.video-container:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+/* Video Layout */
+.video-item {
+    width: 70%; /* Similar to profile image size */
+    margin: 20px auto;
+    background-color: #1f1f1f; /* Dark background for consistency */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect */
+}
+
+/* Video Element Styling */
+.video-item video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px; /* Slight rounding to match card design */
+}
+
+/* Video Title */
+.video-item h3 {
+    font-size: 18px;
+    color: #fff; /* White color for the title */
+    font-weight: 500;
+    margin: 10px 0;
+    text-align: center; /* Center the title */
+}
+
+/* Video Description */
+.video-item p {
+    font-size: 14px;
+    color: #ddd; /* Light color for description */
+    margin-bottom: 10px;
+    text-align: center; /* Center the description */
+}
+
+/* Car Tags Section */
+.video-item .video-info {
+    padding: 10px;
+    font-size: 14px;
+    text-align: center; /* Center car tags */
+}
+
+.video-item .video-info span {
+    color: #007bff; /* Color for the car names */
+    text-transform: capitalize;
+}
+
+.video-item .video-info p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Pagination Styling (Similar to Profile Footer) */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination .step-links-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.pagination .pagination-link {
+    font-size: 18px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.pagination .pagination-link:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Responsive Design for Videos */
+@media (max-width: 768px) {
+    .video-container {
+        width: 100%; /* Full width on mobile */
+        margin: 10px 0;
+    }
+
+    .video-item {
+        width: 100%; /* Full width for video items */
+    }
+
+    .pagination .pagination-link {
+        font-size: 16px; /* Adjust font size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjustments for very small screens */
+    .video-container {
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    .video-item {
+        width: 100%; /* Ensure full width on smaller screens */
+    }
+
+    .video-item h3 {
+        font-size: 16px; /* Slightly smaller title on smaller screens */
+    }
+
+    .video-item p {
+        font-size: 12px; /* Smaller description text */
+    }
+
+    .pagination .pagination-link {
+        font-size: 14px; /* Smaller pagination text */
+    }
+}
