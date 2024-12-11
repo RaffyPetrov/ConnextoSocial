@@ -1,1 +1,1 @@
-web: gunicorn ConnextSocial.wsgi --bind 0.0.0.0:$PORT
+web: gunicorn ConnextoSocial.wsgi --log-file -
