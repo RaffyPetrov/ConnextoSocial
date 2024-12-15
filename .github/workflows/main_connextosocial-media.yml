@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - connextosocialWebSite23
+name: Build and deploy Python app to Azure Web App - connextosocial-media
 
 on:
   push:
@@ -65,14 +65,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_293DE1B81F67465DA1F1E74FAB9BD1B3 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_3E2797E06BE949C4A448A798FE548ECC }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_15694DDF06D6454299273282BCE7C1F6 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_32468AC8B1B04B36A39EF642680C17E1 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D00E8D2C907D485BB036EE57301202BE }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_CCDFB2C078D649868405F02BF644E139 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'connextosocialWebSite23'
+          app-name: 'connextosocial-media'
           slot-name: 'Production'
           
