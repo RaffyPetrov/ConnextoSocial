@@ -61,18 +61,15 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
-      
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_2259379706CA4865B2493207D3BCE8F5 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_DE77DDD39FC34EEEBEDBF2AE74013368 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_03E7BD1E592B41569FCF0D19879CF5B5 }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
           app-name: 'connextosocial-socialmedia-second-release'
-          slot-name: 'Production'
-          
+          slot-name: 'production'
+          package: ./release.zip
