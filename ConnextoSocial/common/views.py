@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, resolve_url, get_object_or_404
 from django.views.generic import ListView
-from pyperclip import copy
+import clipboard
 from ConnextoSocial.carvideos.models import CarVideo
 from ConnextoSocial.common.forms import CommentForm, SearchForm, VideoCommentForm
 from ConnextoSocial.common.models import Like, VideoLike
@@ -102,12 +102,10 @@ def comment_on_car_video(request, video_id: int):
 
 
 def video_share_functionality(request, video_id: int):
-    copy(request.META.get('HTTP_HOST') + resolve_url('video-details', video_id))
-
+    clipboard.copy(request.META.get('HTTP_HOST') + resolve_url('video-details', video_id))
     return redirect(request.META.get('HTTP_REFERER') + f'#{video_id}')
 
 
 def photo_share_functionality(request, photo_id: int):
-    copy(request.META.get('HTTP_HOST') + resolve_url('photo-details', photo_id))
-
+    clipboard.copy(request.META.get('HTTP_HOST') + resolve_url('photo-details', photo_id))
     return redirect(request.META.get('HTTP_REFERER') + f'#{photo_id}')
