@@ -33,7 +33,7 @@ class Profile(models.Model):
     profile_picture = models.ImageField(
         upload_to='profile_pictures/',
         validators=[FileSizeValidator(5)],
-        default='profile_pictures/default.jpg',
+        default='profile_pictures/person.png',
         blank=True,
         null=True,
     )
