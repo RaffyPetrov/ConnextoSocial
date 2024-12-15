@@ -17,7 +17,6 @@ DEBUG = os.getenv('DEBUG', config('DEBUG')) == "True"
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', config('ALLOWED_HOSTS')).split(',')
 
-
 CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', config('CSRF_TRUSTED_ORIGINS', [])).split(',')
 
 # Application definition
@@ -72,8 +71,8 @@ DATABASES = {
         "NAME": os.getenv('DB_NAME', config('DB_NAME')),
         "USER": os.getenv('DB_USER', config('DB_USER')),
         "PASSWORD": os.getenv('DB_PASS', config('DB_PASS')),
-        "HOST": os.getenv('DB_HOST', config('DB_HOST')),  # Update this to your cloud DB host
-        "PORT": os.getenv('DB_PORT', config('DB_PORT', 5432)),
+        "HOST": os.getenv('DB_HOST', config('DB_HOST')),
+        "PORT": os.getenv('DB_PORT', config('DB_PORT')),
     }
 }
 
@@ -120,3 +119,11 @@ AUTH_USER_MODEL = 'accounts.AppUser'
 # Login redirect URLs
 LOGIN_REDIRECT_URL = reverse_lazy('home page')
 LOGOUT_REDIRECT_URL = reverse_lazy('login')
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = os.getenv('EMAIL_HOST', config('EMAIL_HOST'))
+# EMAIL_PORT = os.getenv('EMAIL_PORT', config('EMAIL_PORT'))
+# EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', config('EMAIL_USE_TLS')) == "True"
+# EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', config('EMAIL_HOST_USER'))
+# EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', config('EMAIL_HOST_PASSWORD'))
+# COMPANY_EMAIL = os.getenv('COMPANY_EMAIL', config('COMPANY_EMAIL'))
