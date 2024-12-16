@@ -13,7 +13,7 @@ class CarVideo(models.Model):
     title = models.CharField(max_length=100)
     video = models.FileField(
         upload_to='car_videos/',
-        validators=[validate_video_length]  # Apply the custom validator
+        validators=[validate_video_length]
     )
     description = models.TextField(
         max_length=433,

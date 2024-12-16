@@ -3,7 +3,8 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 from ConnextoSocial.accounts.forms import AppUserCreationForm, AppUserChangeForm
 from ConnextoSocial.accounts.models import Profile
-
+from django.contrib.auth.models import Group
+from django.contrib.auth.admin import GroupAdmin
 
 UserModel = get_user_model()
 
@@ -14,6 +15,7 @@ class ProfileInline(admin.StackedInline):
     extra = 0
     can_delete = False
     verbose_name_plural = 'Profiles'
+
 
 @admin.register(UserModel)
 class AppUserAdmin(UserAdmin):
@@ -70,9 +72,6 @@ class AppUserAdmin(UserAdmin):
         return "User"
     get_user_roles.short_description = "Roles"
 
-# Create a custom GroupAdmin to ensure role management is secure
-from django.contrib.auth.models import Group
-from django.contrib.auth.admin import GroupAdmin
 
 class CustomGroupAdmin(GroupAdmin):
     def has_delete_permission(self, request, obj=None):
@@ -83,5 +82,3 @@ class CustomGroupAdmin(GroupAdmin):
 
 admin.site.unregister(Group)
 admin.site.register(Group, CustomGroupAdmin)
-
-# Ensure that the GroupAdmin provides a clear UI for managing roles securely

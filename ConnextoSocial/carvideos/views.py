@@ -2,11 +2,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DetailView, ListView
-from ConnextoSocial.cars.forms import CarAddForm  # Adjust if needed
+from ConnextoSocial.cars.forms import CarAddForm
 from .models import CarVideo
 from .forms import CarVideoAddForm, CarVideoEditForm
 from django.shortcuts import redirect, get_object_or_404
-
 from ..common.forms import VideoCommentForm, CarVideoSearchForm
 
 

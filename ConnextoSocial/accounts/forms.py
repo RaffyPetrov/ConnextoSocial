@@ -22,5 +22,5 @@ class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
         exclude = ('user', )
-        fields = ['first_name', 'last_name', 'date_of_birth', 'profile_picture', 'description']  # Add fields you want to edit
-        profile_picture = forms.ImageField(required=False)  # If profile_picture is optional
+        fields = ['first_name', 'last_name', 'date_of_birth', 'profile_picture', 'description']
+        profile_picture = forms.ImageField(required=False)

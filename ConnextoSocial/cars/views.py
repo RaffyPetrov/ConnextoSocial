@@ -18,8 +18,7 @@ class CarAddPage(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-            # Redirect to the CarPhotoAddPage after the form is successfully submitted
-            return reverse_lazy('photo-add')  # Use 'photo-add' which corresponds to the URL pattern for CarPhotoAddPage
+        return reverse_lazy('photo-add')
 
 
 class CarEditPage(LoginRequiredMixin, UserPassesTestMixin, UpdateView):

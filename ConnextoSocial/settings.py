@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'ConnextoSocial.common.apps.CommonConfig',
     'ConnextoSocial.cars.apps.CarsConfig',
     'ConnextoSocial.carvideos.apps.CarvideosConfig'
+
 ]
 
 MIDDLEWARE = [
@@ -101,7 +102,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
+
 STATIC_URL = 'static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
