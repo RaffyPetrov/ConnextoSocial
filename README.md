@@ -60,35 +60,41 @@
 
 
 <h2 align="left">Home page of ConnextoSocial</h2>
-
 ![home-page](https://github.com/user-attachments/assets/186868cd-a39f-4b9f-b22d-8720ab1f42b2)
 
-<h3 align="left">First, register an user</h3>
 
+<h3 align="left">First, register an user</h3>
 ![register-page](https://github.com/user-attachments/assets/b095a97a-294d-4dc0-a180-3212bbd3e5d4)
 
 
-<h4 align="left">After created the profile, log in to your account</h4>
 
+<h4 align="left">After created the profile, log in to your account</h4>
 ![login-page](https://github.com/user-attachments/assets/88c6c541-199f-4316-8ac9-f1eb1d728a14)
+
 
 
 <h5 align="left">Open the menu, select Create</h5>
 ![menu](https://github.com/user-attachments/assets/727fcfa9-5e56-4b4c-874a-934ac2f43894)
 
 
-<h6 align="left">First, you have to create the car, so fill out the car name, car model and select the date of production.
-After this, for uploading a car photo, choose an image from your local device, choose what car brand you want to upload and create description, choose location,</h6>
+
+<h6 align="left">First, you have to create the car, so fill out the car name, car model and select the date of production.,</h6>
+**After this, for uploading a car photo, choose an image from your local device, choose what car brand you want to upload and create description, choose location**
 ![create-car-page](https://github.com/user-attachments/assets/a8d8f35d-42b7-4d0b-9351-c477ecb46103)
+
+
 
 <h7 align="left">Choose from menu Upload Video Shorts</h7>
 ![upload-vide-menu](https://github.com/user-attachments/assets/11703041-f4de-4537-87a1-462bea0c09de)
 
 
+
 <h8 align="left">This is the page for creating video posts. Just read the fields. It's same as the photos post page</h8>
 ![create-video-post-page](https://github.com/user-attachments/assets/24f3b208-64e0-4e97-a1cd-5bfc8e14b059)
 
-<h9 align="left">This is the video posts home page. You can leave comment, like the posts and share a certain video posts. Also like the car photos posts. Enjoy it!</h9>
+
+
+<h9 align="left">This is the video posts home page. You can leave comment, like the posts and share a certain video posts. Also like the car photos posts.</h9>
 ![video-post-page](https://github.com/user-attachments/assets/ec3fba38-5007-49e0-b4ab-51032aef6fdd)
 
 
