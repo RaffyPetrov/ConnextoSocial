@@ -5,11 +5,12 @@
 
 
 <h2 align="left">Home page of ConnextoSocial</h1>
+![home-page](https://github.com/user-attachments/assets/1da5c912-8945-486a-8f3a-c18d7b9e12d4)
 
 
 # Project setup
 
-### 1. Clone the repo![home-page](https://github.com/user-attachments/assets/1da5c912-8945-486a-8f3a-c18d7b9e12d4)
+### 1. Clone the repo.
 
    
   ```terminal
