@@ -5,7 +5,8 @@
 
 
 <h2 align="left">Home page of ConnextoSocial</h1>
-![home-page](https://github.com/user-attachments/assets/1da5c912-8945-486a-8f3a-c18d7b9e12d4)
+![home-page](https://github.com/user-attachments/assets/957b4f49-2db9-4613-b6a1-2567d34ee57d)
+
 
 
 # Project setup
@@ -16,7 +17,7 @@
   ```terminal
 
     git clone https://github.com/RaffyPetrov/ConnextoSocial.git
-![home-page](https://github.com/user-attachments/assets/17c2dcb6-ad19-48d5-8ccc-0e8f65b8e04b)
+
 
   ```
 
