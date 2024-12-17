@@ -58,35 +58,35 @@
   ```
 
 
-<h2 align="center">Screenshots</h2>
-Home Page of ConnextoSocial
+<h2 align="center">Short review of the site</h2>
+Home Page of ConnextoSocial.
 <p align="center"> <img src="https://github.com/user-attachments/assets/8e5d9b52-4e18-4d02-b73d-fc1a7db84eaa" alt="Home Page" /> </p>
 
 
-First, Register a User
+First, Register a User.
 <p align="center"> <img src="https://github.com/user-attachments/assets/45facba3-b09a-450f-8d09-fdb81e0740fb" alt="Register Page" /> </p>
 
 
-Log in to Your Account
+Log in to Your Account.
 <p align="center"> <img src="https://github.com/user-attachments/assets/9f15be57-15c3-4306-bb12-01d873188602" alt="Login Page" /> </p>
 
 
-Open the Menu and Select Create
+Open the Menu and Select Create.
 <p align="center"> <img src="https://github.com/user-attachments/assets/943be9a4-f4a1-4d9a-ab61-c8189fec40f3" alt="Menu" /> </p>
 
 
-Create a Car Profile
+Create a Car, and upload car photo posts.
 <p align="center"> <img src="https://github.com/user-attachments/assets/575567ef-1fd2-4ff9-b98c-efe149d7ca6b" alt="Create Car Page" /> </p>
 
-Upload Video Shorts
+Upload Video Shorts.
 <p align="center"> <img src="https://github.com/user-attachments/assets/c607e780-4de2-4a32-bc25-3cee84bb4ab2" alt="Upload Video Menu" /> </p>
 
 
-Create Video Posts
+Create Video Posts.
 <p align="center"> <img src="https://github.com/user-attachments/assets/40fce3a9-4262-4c0e-9dd8-8d54b2a0d437" alt="Create Video Post Page" /> </p>
 
 
-Video Posts Home Page
+Video Posts Home Page.
 <p align="center"> <img src="https://github.com/user-attachments/assets/9f26c4da-d8fd-4549-9cd6-2f56907b9193" alt="Video Post Page" /> </p>
 
 
