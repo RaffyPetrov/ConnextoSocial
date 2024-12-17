@@ -2,7 +2,7 @@
 
 **1. Clone the repo**
 
-**  git clone https://github.com/RaffyPetrov/ConnextoSocial.git**
+  git clone https://github.com/RaffyPetrov/ConnextoSocial.git
 
 **2. Open the project**
 
@@ -23,9 +23,9 @@
       }
   }
 
-**  5. Run the migrations**
+  5. Run the migrations
 
-**python manage.py migrate**
+python manage.py migrate
 
 **6. Run the project**
 
