@@ -89,8 +89,9 @@ Create Video Posts.
 Video Posts Home Page.
 <p align="center"> <img src="https://github.com/user-attachments/assets/9f26c4da-d8fd-4549-9cd6-2f56907b9193" alt="Video Post Page" /> </p>
 
+
 Profile Details page.
-<p align="center"> <img src="(https://github.com/user-attachments/assets/67a420fc-ed59-4d29-9f4a-d8eccb7e2257" alt="Video Post Page" /> </p>
+<p align="center"> <img src="(https://github.com/user-attachments/assets/67a420fc-ed59-4d29-9f4a-d8eccb7e2257" alt="Profile Details Page" /> </p>
 
 
 
