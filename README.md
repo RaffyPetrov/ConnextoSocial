@@ -1,4 +1,5 @@
 **Project Setup**
+
 **1. Clone the repo**
 
 **  git clone https://github.com/RaffyPetrov/ConnextoSocial.git**
