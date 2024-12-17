@@ -58,46 +58,36 @@
   ```
 
 
-
-<h2 align="center">Home page of ConnextoSocial</h2>
-![home-page](https://github.com/user-attachments/assets/8e5d9b52-4e18-4d02-b73d-fc1a7db84eaa)
-
-
-
-<h3 align="center">First, register an user</h3>
-![register-page](https://github.com/user-attachments/assets/45facba3-b09a-450f-8d09-fdb81e0740fb)
+<h2 align="center">Screenshots</h2>
+Home Page of ConnextoSocial
+<p align="center"> <img src="https://github.com/user-attachments/assets/8e5d9b52-4e18-4d02-b73d-fc1a7db84eaa" alt="Home Page" /> </p>
 
 
-
-<h4 align="center">After created the profile, log in to your account</h4>
-![login-page](https://github.com/user-attachments/assets/9f15be57-15c3-4306-bb12-01d873188602)
-
+First, Register a User
+<p align="center"> <img src="https://github.com/user-attachments/assets/45facba3-b09a-450f-8d09-fdb81e0740fb" alt="Register Page" /> </p>
 
 
-<h5 align="center">Open the menu, select Create</h5>
-![menu](https://github.com/user-attachments/assets/943be9a4-f4a1-4d9a-ab61-c8189fec40f3)
+Log in to Your Account
+<p align="center"> <img src="https://github.com/user-attachments/assets/9f15be57-15c3-4306-bb12-01d873188602" alt="Login Page" /> </p>
 
 
-
-<h6 align="center">First, you have to create the car, so fill out the car name, car model and select the date of production.,</h6>
-
-**After this, for uploading a car photo, choose an image from your local device, choose what car brand you want to upload and create description, choose location**
-![create-car-page](https://github.com/user-attachments/assets/575567ef-1fd2-4ff9-b98c-efe149d7ca6b)
+Open the Menu and Select Create
+<p align="center"> <img src="https://github.com/user-attachments/assets/943be9a4-f4a1-4d9a-ab61-c8189fec40f3" alt="Menu" /> </p>
 
 
+Create a Car Profile
+<p align="center"> <img src="https://github.com/user-attachments/assets/575567ef-1fd2-4ff9-b98c-efe149d7ca6b" alt="Create Car Page" /> </p>
 
-<h7 align="center">Choose from menu Upload Video Shorts</h7>
-![upload-vide-menu](https://github.com/user-attachments/assets/c607e780-4de2-4a32-bc25-3cee84bb4ab2)
-
-
-
-<h8 align="left">This is the page for creating video posts. Just read the fields. It's same as the photos post page</h8>
-![create-video-post-page](https://github.com/user-attachments/assets/40fce3a9-4262-4c0e-9dd8-8d54b2a0d437)
+Upload Video Shorts
+<p align="center"> <img src="https://github.com/user-attachments/assets/c607e780-4de2-4a32-bc25-3cee84bb4ab2" alt="Upload Video Menu" /> </p>
 
 
+Create Video Posts
+<p align="center"> <img src="https://github.com/user-attachments/assets/40fce3a9-4262-4c0e-9dd8-8d54b2a0d437" alt="Create Video Post Page" /> </p>
 
-<h9 align="center">This is the video posts home page. You can leave comment, like the posts and share a certain video posts. Also like the car photos posts.</h9>
-![video-post-page](https://github.com/user-attachments/assets/9f26c4da-d8fd-4549-9cd6-2f56907b9193)
+
+Video Posts Home Page
+<p align="center"> <img src="https://github.com/user-attachments/assets/9f26c4da-d8fd-4549-9cd6-2f56907b9193" alt="Video Post Page" /> </p>
 
 
 
