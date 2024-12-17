@@ -65,40 +65,72 @@
   ```
 
 
-<h2 align="center">Short review of the website</h2>
-Home Page of ConnextoSocial.
-<p align="center"> <img src="https://github.com/user-attachments/assets/8e5d9b52-4e18-4d02-b73d-fc1a7db84eaa" alt="Home Page" /> </p>
+<h2 align="center">Short Review of the Website</h2>
 
+---
 
-First, Register a User.
-<p align="center"> <img src="https://github.com/user-attachments/assets/45facba3-b09a-450f-8d09-fdb81e0740fb" alt="Register Page" /> </p>
+### 1. Home Page of ConnextoSocial
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8e5d9b52-4e18-4d02-b73d-fc1a7db84eaa" alt="Home Page" />
+</p>
 
+---
 
-Log in to Your Account.
-<p align="center"> <img src="https://github.com/user-attachments/assets/9f15be57-15c3-4306-bb12-01d873188602" alt="Login Page" /> </p>
+### 2. Register a User
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/45facba3-b09a-450f-8d09-fdb81e0740fb" alt="Register Page" />
+</p>
 
+---
 
-Open the Menu and Select Create.
-<p align="center"> <img src="https://github.com/user-attachments/assets/943be9a4-f4a1-4d9a-ab61-c8189fec40f3" alt="Menu" /> </p>
+### 3. Log in to Your Account
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9f15be57-15c3-4306-bb12-01d873188602" alt="Login Page" />
+</p>
 
+---
 
-Create a Car, and upload car photo posts.
-<p align="center"> <img src="https://github.com/user-attachments/assets/575567ef-1fd2-4ff9-b98c-efe149d7ca6b" alt="Create Car Page" /> </p>
+### 4. Open the Menu and Select Create
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/943be9a4-f4a1-4d9a-ab61-c8189fec40f3" alt="Menu" />
+</p>
 
-Upload Video Shorts.
-<p align="center"> <img src="https://github.com/user-attachments/assets/c607e780-4de2-4a32-bc25-3cee84bb4ab2" alt="Upload Video Menu" /> </p>
+---
 
+### 5. Create a Car and Upload Car Photo Posts
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/575567ef-1fd2-4ff9-b98c-efe149d7ca6b" alt="Create Car Page" />
+</p>
 
-Create Video Posts.
-<p align="center"> <img src="https://github.com/user-attachments/assets/40fce3a9-4262-4c0e-9dd8-8d54b2a0d437" alt="Create Video Post Page" /> </p>
+---
 
+### 6. Upload Video Shorts
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c607e780-4de2-4a32-bc25-3cee84bb4ab2" alt="Upload Video Menu" />
+</p>
 
-Video Posts Home Page.
-<p align="center"> <img src="https://github.com/user-attachments/assets/9f26c4da-d8fd-4549-9cd6-2f56907b9193" alt="Video Post Page" /> </p>
+---
 
+### 7. Create Video Posts
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/40fce3a9-4262-4c0e-9dd8-8d54b2a0d437" alt="Create Video Post Page" />
+</p>
 
-Profile Details page.
-<p align="center"> <img src="https://github.com/user-attachments/assets/67a420fc-ed59-4d29-9f4a-d8eccb7e2257" alt="Profile Details Page" /> </p>
+---
+
+### 8. Video Posts Home Page
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9f26c4da-d8fd-4549-9cd6-2f56907b9193" alt="Video Post Page" />
+</p>
+
+---
+
+### 9. Profile Details Page
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/67a420fc-ed59-4d29-9f4a-d8eccb7e2257" alt="Profile Details Page" />
+</p>
+
+---
 
 
 
