@@ -5,13 +5,6 @@
 
 
 <h2 align="left">Home page of ConnextoSocial</h1>
-![home-page](https://github.com/user-attachments/assets/957b4f49-2db9-4613-b6a1-2567d34ee57d)
-
-
-
-
-
-
 
 
 # Project setup
