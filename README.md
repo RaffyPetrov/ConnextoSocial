@@ -65,8 +65,8 @@
   ```
 
 
-<h2 align="center">Short review of the site</h2>
-### Home Page of ConnextoSocial.
+<h2 align="center">Short review of the website</h2>
+Home Page of ConnextoSocial.
 <p align="center"> <img src="https://github.com/user-attachments/assets/8e5d9b52-4e18-4d02-b73d-fc1a7db84eaa" alt="Home Page" /> </p>
 
 
