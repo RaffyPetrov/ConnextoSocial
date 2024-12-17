@@ -1,32 +1,51 @@
-**Project Setup**
+# Project setup
 
-**1. Clone the repo**
+### 1. Clone the repo
+   
+  ```terminal
 
-  git clone https://github.com/RaffyPetrov/ConnextoSocial.git
+    git clone https://github.com/RaffyPetrov/ConnextoSocial.git
 
-**2. Open the project**
+  ```
 
-**3. Install dependencies**
+### 2. Open the project
 
-**pip install -r requirements.txt**
 
-**4. Change DB settings in settings.py**
+### 3. Install dependencies
+ 
+   ```terminal
+   
+     pip install -r requirements.txt
+  
+   ```
 
-  DATABASES = {
-      "default": {
-          "ENGINE": "django.db.backends.postgresql",
-          "NAME": "your_db_name",
-          "USER": "your_username",
-          "PASSWORD": "your_pass",
-          "HOST": "127.0.0.1",
-          "PORT": "5432",
-      }
-  }
+### 4. Change DB settings in settings.py
 
-  5. Run the migrations
+  ```py
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "your_db_name",
+            "USER": "your_username",
+            "PASSWORD": "your_pass",
+            "HOST": "127.0.0.1",
+            "PORT": "5432",
+        }
+    }
+  ```
 
-python manage.py migrate
+### 5. Run the migrations
 
-**6. Run the project**
+  ```terminal
 
-python manage.py runserver
+    python manage.py migrate
+
+  ```
+
+### 6. Run the project
+
+  ```terminal
+
+    python manage.py runserver
+
+  ```
